@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
 export default function CheckoutPage() {
-  const { items, totalPrice, clear } = useCart();
+  const { items, totalPrice, totalOriginal, totalSavings, clear } = useCart();
   const [form, setForm] = useState({ name: "", phone: "", address: "" });
   const [submitting, setSubmitting] = useState(false);
   const [orderRef, setOrderRef] = useState<string | null>(null);
@@ -129,6 +129,22 @@ export default function CheckoutPage() {
               </li>
             ))}
           </ul>
+          {totalSavings > 0 && (
+            <div className="mt-3 space-y-1 border-t border-border pt-3">
+              <div className="flex justify-between text-sm text-muted">
+                <span>قبل الخصم</span>
+                <span className="line-through">
+                  {totalOriginal} {siteConfig.currency}
+                </span>
+              </div>
+              <div className="flex justify-between text-sm font-semibold text-ember">
+                <span>وفّرت</span>
+                <span>
+                  {totalSavings} {siteConfig.currency}
+                </span>
+              </div>
+            </div>
+          )}
           <div className="mt-4 flex justify-between border-t border-border pt-4 text-lg font-bold">
             <span>الإجمالي</span>
             <span>

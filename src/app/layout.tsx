@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { CartProvider } from "@/lib/cart-context";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { getProducts } from "@/lib/products";
 
 // خط العناوين — Amiri (خط عربي كلاسيكي فاخر)
 const heading = Amiri({
@@ -27,7 +28,9 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const products = await getProducts(); // للـ cross-sell في السلة المنبثقة
+
   return (
     <html
       lang={siteConfig.locale}
@@ -36,7 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <CartProvider>
-          <SiteChrome>{children}</SiteChrome>
+          <SiteChrome products={products}>{children}</SiteChrome>
         </CartProvider>
       </body>
     </html>

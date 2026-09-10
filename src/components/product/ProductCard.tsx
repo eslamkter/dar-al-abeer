@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { siteConfig } from "@/config/site";
 import { getPriceInfo, getBadges, type Badge } from "@/lib/product-helpers";
+import { QuickAddButton } from "./QuickAddButton";
 
 const toneClass: Record<Badge["tone"], string> = {
   gold: "bg-gold text-white",
@@ -17,10 +18,14 @@ export function ProductCard({ product }: { product: Product }) {
   const badges = getBadges(product);
 
   return (
-    <Link
-      href={`/products/${product.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(28,26,23,0.35)]"
-    >
+    <div className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(28,26,23,0.35)]">
+      {/* إضافة سريعة (فوق الرابط) */}
+      <QuickAddButton product={product} />
+
+      <Link
+        href={`/products/${product.slug}`}
+        className="flex flex-1 flex-col"
+      >
       <div className="relative aspect-square overflow-hidden bg-background">
         <Image
           src={product.image}
@@ -67,6 +72,7 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }

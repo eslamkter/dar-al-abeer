@@ -22,6 +22,12 @@ interface CartContextValue {
   clear: () => void;
   totalItems: number;
   totalPrice: number;
+  totalOriginal: number; // إجمالي الأسعار قبل الخصم
+  totalSavings: number; // مقدار التوفير
+  // السلة المنبثقة
+  isOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -30,6 +36,10 @@ const STORAGE_KEY = "cart";
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
 
   // تحميل السلة من المتصفح أول ما الصفحة تفتح.
   useEffect(() => {
@@ -62,18 +72,21 @@ export function CartProvider({ children }: { children: ReactNode }) {
             : i
         );
       }
+      const info = getPriceInfo(product);
       return [
         ...prev,
         {
           id: product.id,
           slug: product.slug,
           name: product.name,
-          price: getPriceInfo(product).price, // السعر بعد الخصم لو فيه عرض
+          price: info.price, // السعر بعد الخصم لو فيه عرض
+          originalPrice: info.original ?? info.price,
           image: product.image,
           quantity,
         },
       ];
     });
+    openCart(); // تفتح السلة المنبثقة تلقائيًا
   }
 
   function removeItem(id: string) {
@@ -93,6 +106,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
   const totalPrice = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const totalOriginal = items.reduce(
+    (sum, i) => sum + (i.originalPrice ?? i.price) * i.quantity,
+    0
+  );
+  const totalSavings = totalOriginal - totalPrice;
 
   return (
     <CartContext.Provider
@@ -104,6 +122,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
         clear,
         totalItems,
         totalPrice,
+        totalOriginal,
+        totalSavings,
+        isOpen,
+        openCart,
+        closeCart,
       }}
     >
       {children}

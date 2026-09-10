@@ -7,7 +7,8 @@ import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
 export default function CartPage() {
-  const { items, updateQuantity, removeItem, totalPrice } = useCart();
+  const { items, updateQuantity, removeItem, totalPrice, totalOriginal, totalSavings } =
+    useCart();
 
   if (items.length === 0) {
     return (
@@ -99,6 +100,22 @@ export default function CartPage() {
         {/* ملخص الطلب */}
         <aside className="h-fit rounded-lg border border-border bg-surface p-6">
           <h2 className="font-heading text-xl font-bold">ملخص الطلب</h2>
+          {totalSavings > 0 && (
+            <>
+              <div className="mt-4 flex justify-between text-sm text-muted">
+                <span>الإجمالي قبل الخصم</span>
+                <span className="line-through">
+                  {totalOriginal} {siteConfig.currency}
+                </span>
+              </div>
+              <div className="mt-1 flex justify-between text-sm font-semibold text-ember">
+                <span>وفّرت</span>
+                <span>
+                  {totalSavings} {siteConfig.currency}
+                </span>
+              </div>
+            </>
+          )}
           <div className="mt-4 flex justify-between border-t border-border pt-4 text-lg font-bold">
             <span>الإجمالي</span>
             <span>

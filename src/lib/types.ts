@@ -3,7 +3,8 @@ export interface CartItem {
   id: string;
   slug: string;
   name: string;
-  price: number;
+  price: number; // السعر المدفوع (بعد الخصم لو فيه عرض)
+  originalPrice?: number; // السعر قبل الخصم (لحساب التوفير)
   image: string;
   quantity: number;
 }
