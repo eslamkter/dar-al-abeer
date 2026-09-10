@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+/* ===== ألوان وهوية الثيم ===== */
+/* خلفية كريمية فاخرة، نص فحمي، ذهبي أساسي، ونبرة عود دافئة ثانية. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f5ef;   /* كريمي أدفأ قليلًا */
+  --surface: #ffffff;
+  --surface-2: #f2ede3;    /* سطح مرفوع ناعم */
+  --foreground: #1c1a17;
+  --muted: #6f665a;        /* رمادي دافئ مقصود بدل الرمادي الميت */
+  --faint: #9a9284;
+  --gold: #b08d57;         /* الذهبي الأساسي */
+  --gold-dark: #927036;
+  --ember: #9c5a3c;        /* نبرة عود/عنبر ثانية للمسات الخاصة */
+  --border: #e7e0d3;
+  --border-soft: #efe9dd;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-ember: var(--ember);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 300;                 /* متن خفيف لتباين أوضح مع العناوين */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* عناوين ثقيلة = تباين أوزان حاد */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+/* شارة/عنوان فرعي علوي بتتبّع حروف */
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* خط سفلي متحرك لروابط القائمة */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  height: 1.5px;
+  width: 0;
+  background: var(--gold);
+  transition: width 0.28s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* انتقال ناعم بين الصفحات */
+.page-transition { animation: pageIn 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  .page-transition { animation: none; }
 }

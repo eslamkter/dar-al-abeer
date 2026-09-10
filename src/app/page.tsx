@@ -1,69 +1,125 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getProducts, getCategories } from "@/lib/products";
+import { hasActiveDiscount, isNewArrival } from "@/lib/product-helpers";
+import { ProductGrid } from "@/components/product/ProductGrid";
+import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/motion/Reveal";
+import { Marquee } from "@/components/motion/Marquee";
+import { HomeHero } from "@/components/home/HomeHero";
+import { BrandStatement } from "@/components/home/BrandStatement";
+import { CategoryTiles } from "@/components/home/CategoryTiles";
+import type { Product } from "@/lib/types";
 
-export default function Home() {
+// ديناميكية: تعكس المميّز/العروض/الأكثر مبيعًا الحيّ دائمًا.
+export const dynamic = "force-dynamic";
+
+function Section({
+  eyebrow,
+  title,
+  href,
+  products,
+}: {
+  eyebrow: string;
+  title: string;
+  href: string;
+  products: Product[];
+}) {
+  if (products.length === 0) return null;
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <Container className="py-16">
+      <Reveal>
+        <div className="mb-8 flex items-end justify-between">
+          <div>
+            <span className="eyebrow">{eyebrow}</span>
+            <h2 className="mt-2 font-heading text-3xl font-bold">{title}</h2>
+          </div>
+          <Link href={href} className="text-sm text-gold hover:underline">
+            عرض الكل
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </Reveal>
+      <ProductGrid products={products.slice(0, 3)} />
+    </Container>
+  );
+}
+
+export default async function HomePage() {
+  const [products, categories] = await Promise.all([
+    getProducts(),
+    getCategories(),
+  ]);
+  const featured = products.filter((p) => p.is_featured);
+  const offers = products.filter((p) => hasActiveDiscount(p));
+  const bestsellers = products.filter((p) => p.is_bestseller);
+  const newArrivals = products.filter((p) => isNewArrival(p));
+
+  return (
+    <>
+      <HomeHero />
+
+      {/* شريط قيم */}
+      <section className="border-b border-border bg-surface">
+        <Container className="grid grid-cols-1 gap-6 py-8 text-center sm:grid-cols-3">
+          {[
+            ["أصالة مضمونة", "منتج أصلي 100%"],
+            ["دفع عند الاستلام", "ادفع وقت التسليم"],
+            ["شحن لكل الخليج", "توصيل سريع وآمن"],
+          ].map(([t, s]) => (
+            <div key={t}>
+              <div className="font-heading text-base font-bold text-foreground">{t}</div>
+              <div className="mt-1 text-sm text-muted">{s}</div>
+            </div>
+          ))}
+        </Container>
+      </section>
+
+      <Marquee items={["عطور شرقية", "عود فاخر", "مسك أبيض", "ورد دمشقي", "زعفران", "عنبر"]} />
+
+      {/* بلاطات التصنيفات */}
+      <CategoryTiles categories={categories} />
+
+      {/* المجموعة المميّزة */}
+      <Section eyebrow="اختيار الدار" title="المجموعة المميّزة" href="/products" products={featured} />
+
+      {/* بانر عرض */}
+      {offers.length > 0 && (
+        <section className="bg-foreground py-14 text-center text-background">
+          <Container>
+            <Reveal>
+              <span className="eyebrow text-gold">لفترة محدودة</span>
+              <h2 className="mt-3 font-heading text-3xl font-bold">
+                عروض حصرية على تشكيلة مختارة
+              </h2>
+              <p className="mx-auto mt-2 max-w-md text-background/70">
+                خصومات تنتهي قريبًا — اقتنِ عطرك المفضّل قبل انتهاء العرض.
+              </p>
+              <Link
+                href="/products?offers=1"
+                className="mt-6 inline-block rounded-full bg-gold px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-dark"
+              >
+                تسوّق العروض
+              </Link>
+            </Reveal>
+          </Container>
+        </section>
+      )}
+
+      <Section eyebrow="لفترة محدودة" title="عروض حصرية" href="/products?offers=1" products={offers} />
+
+      <BrandStatement />
+
+      <Section eyebrow="اختيار عملائنا" title="الأكثر مبيعًا" href="/products?sort=bestseller" products={bestsellers} />
+
+      <Section eyebrow="جديدنا" title="وصل حديثًا" href="/products" products={newArrivals} />
+
+      <Container className="pb-24 text-center">
+        <Link
+          href="/products"
+          className="inline-block rounded-full border border-gold px-8 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-white"
+        >
+          عرض كل العطور
+        </Link>
+      </Container>
+    </>
   );
 }
