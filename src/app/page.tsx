@@ -83,7 +83,9 @@ export default async function HomePage() {
 
       {/* بانر عرض */}
       {offers.length > 0 && (
-        <section className="bg-foreground py-14 text-center text-background">
+        <section className="relative bg-foreground py-20 text-center text-background">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-background to-transparent" />
           <Container>
             <Reveal>
               <span className="eyebrow text-gold">لفترة محدودة</span>

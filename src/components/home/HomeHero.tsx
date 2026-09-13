@@ -18,7 +18,7 @@ export function HomeHero() {
           className="object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-l from-foreground/55 via-foreground/35 to-foreground/10" />
 
       <Container className="relative z-10 py-24 text-white">
         <div className="max-w-xl">

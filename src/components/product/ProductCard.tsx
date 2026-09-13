@@ -9,7 +9,7 @@ const toneClass: Record<Badge["tone"], string> = {
   gold: "bg-gold text-white",
   ember: "bg-ember text-white",
   new: "bg-foreground text-background",
-  hot: "bg-[#b23a2b] text-white",
+  hot: "bg-[#9a4c42] text-white",
 };
 
 /** بطاقة منتج واحدة في الكتالوج. */
@@ -37,7 +37,7 @@ export function ProductCard({ product }: { product: Product }) {
         {/* الشارات */}
         {badges.length > 0 && (
           <div className="absolute right-2 top-2 flex flex-col items-end gap-1">
-            {badges.slice(0, 3).map((b) => (
+            {badges.slice(0, 2).map((b) => (
               <span
                 key={b.label}
                 className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold shadow-sm ${toneClass[b.tone]}`}
