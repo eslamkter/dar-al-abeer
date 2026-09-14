@@ -27,17 +27,26 @@ export default function CartPage() {
 
   return (
     <Container className="py-12">
+      {/* مسار التنقل */}
+      <nav className="mb-6 text-sm text-muted">
+        <Link href="/" className="hover:text-gold">
+          الرئيسية
+        </Link>
+        <span className="mx-2">/</span>
+        <span className="text-foreground">سلة التسوق</span>
+      </nav>
+
       <h1 className="mb-8 font-heading text-3xl font-bold">سلة التسوق</h1>
 
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid items-start gap-8 lg:grid-cols-3">
         {/* قائمة المنتجات */}
         <div className="space-y-4 lg:col-span-2">
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex gap-4 rounded-lg border border-border bg-surface p-4"
+              className="flex gap-4 rounded-xl border border-border bg-surface p-4 shadow-[0_1px_3px_rgba(28,26,23,0.06)]"
             >
-              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-md bg-background">
+              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-background">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -60,20 +69,20 @@ export default function CartPage() {
 
                 <div className="mt-auto flex items-center justify-between">
                   {/* التحكم في الكمية */}
-                  <div className="flex items-center gap-2">
+                  <div className="inline-flex items-center rounded-full border border-border">
                     <button
                       type="button"
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="h-8 w-8 rounded-md border border-border hover:border-gold"
+                      className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:text-gold"
                       aria-label="تقليل"
                     >
                       −
                     </button>
-                    <span className="w-8 text-center">{item.quantity}</span>
+                    <span className="w-6 text-center text-sm">{item.quantity}</span>
                     <button
                       type="button"
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="h-8 w-8 rounded-md border border-border hover:border-gold"
+                      className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:text-gold"
                       aria-label="زيادة"
                     >
                       +
@@ -83,7 +92,7 @@ export default function CartPage() {
                   <button
                     type="button"
                     onClick={() => removeItem(item.id)}
-                    className="text-sm text-muted hover:text-red-600"
+                    className="rounded-full border border-border px-4 py-1.5 text-xs text-muted transition-colors hover:border-red-300 hover:text-red-600"
                   >
                     حذف
                   </button>
@@ -98,7 +107,7 @@ export default function CartPage() {
         </div>
 
         {/* ملخص الطلب */}
-        <aside className="h-fit rounded-lg border border-border bg-surface p-6">
+        <aside className="h-fit rounded-xl border border-border bg-surface p-6 shadow-[0_1px_3px_rgba(28,26,23,0.06)]">
           <h2 className="font-heading text-xl font-bold">ملخص الطلب</h2>
           {totalSavings > 0 && (
             <>

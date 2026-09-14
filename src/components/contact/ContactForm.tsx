@@ -26,7 +26,7 @@ export function ContactForm() {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-md border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
+          className="w-full rounded-xl border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
         />
       </div>
       <div>
@@ -36,7 +36,7 @@ export function ContactForm() {
           rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full rounded-md border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
+          className="w-full rounded-xl border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
         />
       </div>
       <button

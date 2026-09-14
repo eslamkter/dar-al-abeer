@@ -96,7 +96,7 @@ export default async function ProductPage({
 
           {/* السعر */}
           <div className="mt-4 flex items-baseline gap-3">
-            <span className="text-2xl font-bold text-foreground">
+            <span className="text-3xl font-bold text-foreground">
               {price.price} {siteConfig.currency}
             </span>
             {price.original && (

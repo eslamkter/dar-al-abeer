@@ -98,7 +98,7 @@ export default function CheckoutPage() {
               rows={3}
               value={form.address}
               onChange={(e) => setForm({ ...form, address: e.target.value })}
-              className="w-full rounded-md border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
+              className="w-full rounded-xl border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
             />
           </div>
 
@@ -181,7 +181,7 @@ function Field({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-md border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
+        className="w-full rounded-xl border border-border bg-surface px-4 py-2 outline-none focus:border-gold"
       />
     </div>
   );

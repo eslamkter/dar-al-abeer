@@ -34,8 +34,18 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-border py-4 text-center text-xs text-muted">
-        © {new Date().getFullYear()} {siteConfig.name}. جميع الحقوق محفوظة.
+      <div className="flex flex-col items-center gap-2 border-t border-border py-4 text-center text-xs text-muted sm:flex-row sm:justify-between">
+        <span>
+          © {new Date().getFullYear()} {siteConfig.name}. جميع الحقوق محفوظة.
+        </span>
+        <div className="flex gap-4">
+          <Link href="/privacy" className="hover:text-gold">
+            سياسة الخصوصية
+          </Link>
+          <Link href="/terms" className="hover:text-gold">
+            الشروط والأحكام
+          </Link>
+        </div>
       </div>
     </footer>
   );

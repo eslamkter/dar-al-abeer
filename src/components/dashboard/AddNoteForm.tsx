@@ -33,7 +33,7 @@ export function AddNoteForm({ phone }: { phone: string }) {
         value={note}
         onChange={(e) => setNote(e.target.value)}
         placeholder="اكتب ملاحظة عن العميل..."
-        className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold"
+        className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold"
       />
       <button
         type="submit"

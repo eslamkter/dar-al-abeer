@@ -24,6 +24,7 @@ export default function ContactPage() {
         title="تواصل معنا"
         subtitle="نسعد بالإجابة على استفساراتك وخدمتك"
         image={siteConfig.images.contact}
+        ambient
       />
 
       <Container className="py-16">

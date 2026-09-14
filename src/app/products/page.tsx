@@ -63,6 +63,7 @@ export default async function ProductsPage({
         title="المتجر"
         subtitle="تشكيلة مختارة من أرقى العطور الشرقية والعالمية"
         image={siteConfig.images.shop}
+        ambient
       />
 
       <Container className="py-12">
@@ -76,28 +77,28 @@ export default async function ProductsPage({
             name="q"
             defaultValue={cur.q}
             placeholder="ابحث عن عطر..."
-            className="rounded-md border border-border bg-background px-4 py-2 text-sm outline-none focus:border-gold lg:col-span-2"
+            className="rounded-xl border border-border bg-background px-4 py-2 text-sm outline-none focus:border-gold lg:col-span-2"
           />
-          <select name="gender" defaultValue={cur.gender} className="rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-gold">
+          <select name="gender" defaultValue={cur.gender} className="rounded-xl border border-border bg-background px-3 py-2 text-sm outline-none focus:border-gold">
             <option value="">كل الأنواع</option>
             {GENDERS.map((g) => (
               <option key={g} value={g}>{g}</option>
             ))}
           </select>
-          <select name="category" defaultValue={cur.category} className="rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-gold">
+          <select name="category" defaultValue={cur.category} className="rounded-xl border border-border bg-background px-3 py-2 text-sm outline-none focus:border-gold">
             <option value="">كل التصنيفات</option>
             {categories.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
-          <select name="sort" defaultValue={cur.sort} className="rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-gold">
+          <select name="sort" defaultValue={cur.sort} className="rounded-xl border border-border bg-background px-3 py-2 text-sm outline-none focus:border-gold">
             <option value="">الأحدث</option>
             <option value="price-asc">السعر: الأقل أولًا</option>
             <option value="price-desc">السعر: الأعلى أولًا</option>
             <option value="bestseller">الأكثر مبيعًا</option>
           </select>
           <label className="flex items-center gap-2 text-sm text-muted">
-            <input type="checkbox" name="offers" value="1" defaultChecked={cur.offers === "1"} className="accent-gold" />
+            <input type="checkbox" name="offers" value="1" defaultChecked={cur.offers === "1"} className="accent-gold rounded" />
             العروض فقط
           </label>
           <div className="flex gap-2 lg:col-span-4">

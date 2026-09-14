@@ -111,7 +111,7 @@ export function ProductForm({
             value={form.category}
             onChange={(e) => set("category", e.target.value)}
             placeholder="اختر أو اكتب تصنيفًا جديدًا"
-            className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold"
+            className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold"
           />
           <datalist id="category-options">
             {categories.map((c) => (
@@ -125,7 +125,7 @@ export function ProductForm({
           <select
             value={form.gender}
             onChange={(e) => set("gender", e.target.value)}
-            className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold"
+            className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold"
           >
             <option value="">—</option>
             <option value="رجالي">رجالي</option>
@@ -156,11 +156,11 @@ export function ProductForm({
           <Field label="سعر بعد الخصم" type="number" value={form.sale_price} onChange={(v) => set("sale_price", v)} hint="اتركه فارغًا = بدون عرض" />
           <div>
             <label className="mb-1 block text-sm font-medium">بداية العرض</label>
-            <input type="date" value={form.discount_start} onChange={(e) => set("discount_start", e.target.value)} className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold" />
+            <input type="date" value={form.discount_start} onChange={(e) => set("discount_start", e.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold" />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium">نهاية العرض</label>
-            <input type="date" value={form.discount_end} onChange={(e) => set("discount_end", e.target.value)} className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold" />
+            <input type="date" value={form.discount_end} onChange={(e) => set("discount_end", e.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold" />
           </div>
         </div>
         <div className="mt-4">
@@ -168,11 +168,11 @@ export function ProductForm({
         </div>
         <div className="mt-4 flex flex-wrap gap-6">
           <label className="flex items-center gap-2 text-sm">
-            <input type="checkbox" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} className="accent-gold" />
+            <input type="checkbox" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} className="accent-gold rounded" />
             مميّز (يظهر في الرئيسية)
           </label>
           <label className="flex items-center gap-2 text-sm">
-            <input type="checkbox" checked={isBestseller} onChange={(e) => setIsBestseller(e.target.checked)} className="accent-gold" />
+            <input type="checkbox" checked={isBestseller} onChange={(e) => setIsBestseller(e.target.checked)} className="accent-gold rounded" />
             الأكثر مبيعًا (تثبيت يدوي)
           </label>
         </div>
@@ -234,7 +234,7 @@ function Field({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold"
+        className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold"
       />
       {hint && <p className="mt-1 text-xs text-muted">{hint}</p>}
     </div>
@@ -259,7 +259,7 @@ function TextArea({
         rows={rows}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-md border border-border bg-background px-4 py-2 outline-none focus:border-gold"
+        className="w-full rounded-xl border border-border bg-background px-4 py-2 outline-none focus:border-gold"
       />
     </div>
   );
