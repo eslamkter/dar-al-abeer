@@ -4,8 +4,10 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { FloatingButtons } from "./FloatingButtons";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { MiniCart } from "@/components/cart/MiniCart";
+import { SavedListsProvider } from "@/lib/saved-lists";
 import type { Product } from "@/lib/types";
 
 /**
@@ -26,12 +28,13 @@ export function SiteChrome({
   if (isAdmin) return <>{children}</>;
 
   return (
-    <>
+    <SavedListsProvider>
       <ScrollProgress />
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
       <MiniCart products={products} />
-    </>
+      <FloatingButtons />
+    </SavedListsProvider>
   );
 }

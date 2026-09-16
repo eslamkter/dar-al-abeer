@@ -4,6 +4,7 @@ import type { Product } from "@/lib/types";
 import { siteConfig } from "@/config/site";
 import { getPriceInfo, getBadges, type Badge } from "@/lib/product-helpers";
 import { QuickAddButton } from "./QuickAddButton";
+import { SaveToggleButtons } from "./SaveToggleButtons";
 
 const toneClass: Record<Badge["tone"], string> = {
   gold: "bg-gold text-white",
@@ -19,8 +20,9 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(28,26,23,0.35)]">
-      {/* إضافة سريعة (فوق الرابط) */}
+      {/* إضافة سريعة + مفضلة/مقارنة (فوق الرابط) */}
       <QuickAddButton product={product} />
+      <SaveToggleButtons product={product} />
 
       <Link
         href={`/products/${product.slug}`}

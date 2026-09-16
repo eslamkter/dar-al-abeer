@@ -32,6 +32,13 @@ const icon = {
   ),
 };
 
+const stats = [
+  { value: "٢٥+", label: "سنة خبرة" },
+  { value: "٥٠٠+", label: "عطر مصنوع بعناية" },
+  { value: "٣٠k+", label: "عميل راضٍ" },
+  { value: "١٥+", label: "دولة توصيل" },
+];
+
 const values = [
   {
     title: "مكوّنات نادرة",
@@ -91,6 +98,20 @@ export default function AboutPage() {
               className="object-cover"
             />
           </div>
+        </div>
+      </Container>
+
+      {/* أرقام وإحصائيات — عنصر بنائي مش موجود في باقي الثيمات */}
+      <Container className="py-4">
+        <div className="grid grid-cols-2 gap-6 rounded-2xl border border-border bg-surface px-6 py-10 sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <div className="font-heading text-3xl font-bold text-gold sm:text-4xl">
+                {s.value}
+              </div>
+              <div className="mt-1 text-sm text-muted">{s.label}</div>
+            </div>
+          ))}
         </div>
       </Container>
 

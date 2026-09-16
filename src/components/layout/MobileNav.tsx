@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 /** قائمة الموبايل (زر + لوحة منسدلة). */
 export function MobileNav() {
@@ -47,6 +48,15 @@ export function MobileNav() {
               </Link>
             ))}
           </nav>
+
+          {/* معلومات التواصل واللغة — مطوية هنا بدل شريط علوي منفصل
+              على الموبايل (شاشة ضيقة ما تستحملش شريط تاني). */}
+          <div className="flex items-center justify-between border-t border-border p-4">
+            <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`} className="text-sm text-muted" dir="ltr">
+              {siteConfig.contact.phone}
+            </a>
+            <LanguageSwitcher />
+          </div>
         </div>
       )}
     </div>
