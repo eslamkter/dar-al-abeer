@@ -31,19 +31,55 @@ export function Navbar() {
   const navRight = siteConfig.nav.slice(2);
 
   return (
-    // مش sticky عمدًا — بعكس دار الأثاث وعالم الصغار (الهيدر بيتمرّر مع
-    // الصفحة بدل ما يفضل ثابت)، سلوك مختلف حقيقي مش بس شكل مختلف. شعار
-    // في النص + نص القائمة متقسم حواليه — بدل شعار يمين ونص قائمة
-    // مسطّحة زي باقي الثيمات.
+    // مش sticky عمدًا — بعكس دار الأثاث وعالم الصغار. شعار في النص +
+    // نص القائمة متقسم حواليه بخط نضيف من غير خلفيات أو فواصل — لغة
+    // بصرية "هادئة فاخرة" مختلفة عن شكل الـ pills المصمتة في دار
+    // الأثاث والأيقونات الملوّنة في عالم الصغار، مش بس ترتيب مختلف.
+    //
+    // صفّين جوّا نفس عنصر <header> الواحد (مش شريط منفصل — variant
+    // "merged" في site.ts فاضل زي ما هو): صف رفيع فوق للمعلومات، وصف
+    // رئيسي تحت للشعار/القائمة. الفصل ده حلّ الازدحام اللي كان حاصل
+    // لما كل حاجة كانت متلزّقة في صف واحد.
     <header className="border-b border-border bg-surface">
+      {/* الصف العلوي — هاتف / سوشيال / لغة، ظاهر من xl بس */}
+      <div className="hidden border-b border-border-soft md:block">
+        <Container className="flex h-9 items-center justify-between text-xs">
+          <a
+            href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
+            className="text-muted transition-colors hover:text-gold"
+            dir="ltr"
+          >
+            {siteConfig.contact.phone}
+          </a>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3 text-muted">
+              {social.map(([key, href]) => (
+                <a
+                  key={key}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={key}
+                  className="transition-colors hover:text-gold"
+                >
+                  {socialIcons[key]}
+                </a>
+              ))}
+            </div>
+            <LanguageSwitcher />
+          </div>
+        </Container>
+      </div>
+
+      {/* الصف الرئيسي — شعار في النص، القائمة متقسّمة حواليه */}
       <Container>
-        <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4">
-          <nav className="hidden items-center gap-7 md:flex">
+        <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-6">
+          <nav className="hidden items-center gap-10 md:flex">
             {navLeft.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="nav-link relative text-sm text-muted transition-colors hover:text-gold"
+                className="nav-link relative whitespace-nowrap text-sm tracking-wide text-muted transition-colors hover:text-gold"
               >
                 {item.label}
               </Link>
@@ -52,66 +88,37 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="justify-self-center font-heading text-xl font-bold text-foreground"
+            className="justify-self-center font-heading text-2xl font-bold text-foreground"
           >
             {siteConfig.name}
           </Link>
 
-          <div className="flex items-center justify-end gap-4">
-            <nav className="hidden items-center gap-7 md:flex">
+          <div className="flex items-center justify-end gap-6">
+            <nav className="hidden items-center gap-10 md:flex">
               {navRight.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="nav-link relative text-sm text-muted transition-colors hover:text-gold"
+                  className="nav-link relative whitespace-nowrap text-sm tracking-wide text-muted transition-colors hover:text-gold"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            {/*
-              شريط المعلومات (هاتف + سوشيال + لغة) مدموج هنا جوّا الهيدر
-              نفسه بدل ما يبقى شريط منفصل فوقه — variant "merged" في
-              site.ts. ظاهر من xl بس عشان الصف ما يزدحمش؛ نسخة الموبايل
-              في ذيل درج MobileNav. المحتوى والموضع دول ثابتين مش بيتغيّروا.
-            */}
-            <div className="hidden items-center gap-4 border-r border-border pr-4 xl:flex">
-              <a
-                href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
-                className="shrink-0 whitespace-nowrap text-xs text-muted transition-colors hover:text-gold"
-                dir="ltr"
-              >
-                {siteConfig.contact.phone}
-              </a>
-              <div className="flex items-center gap-2 text-muted">
-                {social.map(([key, href]) => (
-                  <a
-                    key={key}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={key}
-                    className="transition-colors hover:text-gold"
-                  >
-                    {socialIcons[key]}
-                  </a>
-                ))}
-              </div>
-              <LanguageSwitcher />
+            <div className="flex items-center gap-3">
+              <form method="get" action="/products" className="hidden sm:block">
+                <input
+                  type="search"
+                  name="q"
+                  placeholder="ابحث..."
+                  aria-label="بحث"
+                  className="w-24 rounded-full border border-border bg-background px-4 py-1.5 text-sm outline-none transition-all focus:w-36 focus:border-gold"
+                />
+              </form>
+              <CartLink />
+              <MobileNav />
             </div>
-
-            <form method="get" action="/products" className="hidden sm:block">
-              <input
-                type="search"
-                name="q"
-                placeholder="ابحث..."
-                aria-label="بحث"
-                className="w-28 rounded-full border border-border bg-background px-4 py-1.5 text-sm outline-none transition-all focus:w-40 focus:border-gold"
-              />
-            </form>
-            <CartLink />
-            <MobileNav />
           </div>
         </div>
       </Container>
