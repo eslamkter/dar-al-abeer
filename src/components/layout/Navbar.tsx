@@ -27,72 +27,92 @@ const socialIcons: Record<string, React.ReactNode> = {
 
 export function Navbar() {
   const social = Object.entries(siteConfig.contact.social);
+  const navLeft = siteConfig.nav.slice(0, 2);
+  const navRight = siteConfig.nav.slice(2);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-4">
-        {/* الشعار */}
-        <Link href="/" className="shrink-0 font-heading text-xl font-bold text-foreground">
-          {siteConfig.name}
-        </Link>
-
-        {/* روابط نضيفة (٤ فقط) */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {siteConfig.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="nav-link relative text-sm text-muted transition-colors hover:text-gold"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/*
-          شريط المعلومات (هاتف + سوشيال + لغة) مدموج هنا جوّا الهيدر
-          نفسه بدل ما يبقى شريط منفصل فوقه — variant "merged" في
-          site.ts. ظاهر من xl بس عشان الصف ما يزدحمش؛ نسخة الموبايل في
-          ذيل درج MobileNav.
-        */}
-        <div className="hidden items-center gap-4 border-r border-border pr-4 xl:flex">
-          <a
-            href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
-            className="text-xs text-muted transition-colors hover:text-gold"
-            dir="ltr"
-          >
-            {siteConfig.contact.phone}
-          </a>
-          <div className="flex items-center gap-2 text-muted">
-            {social.map(([key, href]) => (
-              <a
-                key={key}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={key}
-                className="transition-colors hover:text-gold"
+    // مش sticky عمدًا — بعكس دار الأثاث وعالم الصغار (الهيدر بيتمرّر مع
+    // الصفحة بدل ما يفضل ثابت)، سلوك مختلف حقيقي مش بس شكل مختلف. شعار
+    // في النص + نص القائمة متقسم حواليه — بدل شعار يمين ونص قائمة
+    // مسطّحة زي باقي الثيمات.
+    <header className="border-b border-border bg-surface">
+      <Container>
+        <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4">
+          <nav className="hidden items-center gap-7 md:flex">
+            {navLeft.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="nav-link relative text-sm text-muted transition-colors hover:text-gold"
               >
-                {socialIcons[key]}
-              </a>
+                {item.label}
+              </Link>
             ))}
-          </div>
-          <LanguageSwitcher />
-        </div>
+          </nav>
 
-        {/* بحث + سلة + قائمة موبايل */}
-        <div className="flex items-center gap-3">
-          <form method="get" action="/products" className="hidden sm:block">
-            <input
-              type="search"
-              name="q"
-              placeholder="ابحث..."
-              aria-label="بحث"
-              className="w-32 rounded-full border border-border bg-background px-4 py-1.5 text-sm outline-none transition-all focus:w-44 focus:border-gold"
-            />
-          </form>
-          <CartLink />
-          <MobileNav />
+          <Link
+            href="/"
+            className="justify-self-center font-heading text-xl font-bold text-foreground"
+          >
+            {siteConfig.name}
+          </Link>
+
+          <div className="flex items-center justify-end gap-4">
+            <nav className="hidden items-center gap-7 md:flex">
+              {navRight.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="nav-link relative text-sm text-muted transition-colors hover:text-gold"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/*
+              شريط المعلومات (هاتف + سوشيال + لغة) مدموج هنا جوّا الهيدر
+              نفسه بدل ما يبقى شريط منفصل فوقه — variant "merged" في
+              site.ts. ظاهر من xl بس عشان الصف ما يزدحمش؛ نسخة الموبايل
+              في ذيل درج MobileNav. المحتوى والموضع دول ثابتين مش بيتغيّروا.
+            */}
+            <div className="hidden items-center gap-4 border-r border-border pr-4 xl:flex">
+              <a
+                href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
+                className="shrink-0 whitespace-nowrap text-xs text-muted transition-colors hover:text-gold"
+                dir="ltr"
+              >
+                {siteConfig.contact.phone}
+              </a>
+              <div className="flex items-center gap-2 text-muted">
+                {social.map(([key, href]) => (
+                  <a
+                    key={key}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={key}
+                    className="transition-colors hover:text-gold"
+                  >
+                    {socialIcons[key]}
+                  </a>
+                ))}
+              </div>
+              <LanguageSwitcher />
+            </div>
+
+            <form method="get" action="/products" className="hidden sm:block">
+              <input
+                type="search"
+                name="q"
+                placeholder="ابحث..."
+                aria-label="بحث"
+                className="w-28 rounded-full border border-border bg-background px-4 py-1.5 text-sm outline-none transition-all focus:w-40 focus:border-gold"
+              />
+            </form>
+            <CartLink />
+            <MobileNav />
+          </div>
         </div>
       </Container>
     </header>
