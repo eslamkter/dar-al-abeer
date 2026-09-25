@@ -1,3 +1,6 @@
+import Link from "next/link";
+import {ContactQuestions} from "@/components/contact/ContactQuestions";
+import { pageSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Hero } from "@/components/ui/Hero";
 import { Container } from "@/components/ui/Container";
@@ -5,6 +8,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
+  ...pageSeo("/contact"),
   title: "تواصل معنا",
   description: `تواصل مع ${siteConfig.name} — نسعد بخدمتك.`,
 };
@@ -31,7 +35,7 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* معلومات التواصل */}
           <div>
-            <h2 className="font-heading text-2xl font-bold">معلومات التواصل</h2>
+            {c.enabled?<><h2 className="font-heading text-2xl font-bold">معلومات التواصل</h2>
             <div className="mt-6 space-y-5">
               {info.map((item) => (
                 <div key={item.label}>
@@ -55,19 +59,19 @@ export default function ContactPage() {
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
               تواصل عبر واتساب
-            </a>
+            </a></>:<><h2 className="font-heading text-2xl font-bold">{c.demoTitle}</h2><p className="my-5 max-w-prose text-muted">{c.demoIntro}</p><ul className="space-y-3">{c.demoLinks.map(link=><li key={link.href}><Link className="inline-block min-h-11 py-3 underline" href={link.href}>{link.label}</Link></li>)}</ul></>}
           </div>
 
           {/* نموذج الرسالة */}
           <div className="rounded-lg border border-border bg-background p-6">
             <h2 className="font-heading text-2xl font-bold">أرسل رسالة</h2>
             <p className="mt-1 mb-6 text-sm text-muted">
-              اكتب رسالتك وسنتواصل معك في أقرب وقت.
+              {c.enabled?"اكتب رسالتك وسنتواصل معك في أقرب وقت.":c.demoIntro}
             </p>
             <ContactForm />
           </div>
         </div>
-      </Container>
+      <ContactQuestions/></Container>
     </>
   );
 }

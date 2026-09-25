@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/lib/cart-context";
@@ -12,30 +13,18 @@ export function MiniCart({ products }: { products: Product[] }) {
   const { items, totalPrice, totalSavings, isOpen, closeCart, addItem } =
     useCart();
 
+  const dialog=useRef<HTMLDialogElement>(null);
+  useEffect(()=>{if(isOpen)dialog.current?.showModal();else dialog.current?.close();},[isOpen]);
+
   const inCart = new Set(items.map((i) => i.id));
   const suggestions = products
-    .filter((p) => !inCart.has(p.id) && p.stock > 0)
+    .filter((p) => !inCart.has(p.id) && p.stock > 0 && !p.variants?.length)
     .sort((a, b) => Number(b.is_bestseller) - Number(a.is_bestseller))
     .slice(0, 3);
 
   return (
     <>
-      {/* الخلفية المعتّمة */}
-      <div
-        onClick={closeCart}
-        className={`fixed inset-0 z-[70] bg-black/40 transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        aria-hidden
-      />
-
-      {/* اللوحة */}
-      <aside
-        className={`fixed inset-y-0 left-0 z-[80] flex w-full max-w-sm flex-col bg-surface shadow-2xl transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        aria-label="سلة التسوق"
-      >
+      <dialog ref={dialog} className="cart-dialog" aria-label="سلة التسوق" onClose={closeCart} onClick={e=>{if(e.target===e.currentTarget)closeCart();}}>
         {/* الرأس */}
         <div className="flex items-center justify-between border-b border-border p-4">
           <span className="font-heading text-lg font-bold">
@@ -148,7 +137,7 @@ export function MiniCart({ products }: { products: Product[] }) {
             </div>
           </>
         )}
-      </aside>
+      </dialog>
     </>
   );
 }

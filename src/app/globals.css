@@ -81,3 +81,36 @@ h1, h2, h3, h4 {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   .page-transition { animation: none; }
 }
+
+/* Fluid bounded layout shared in behavior; each theme owns its dimensions. */
+@layer components { .theme-container { max-width: var(--content-width); padding-inline: var(--page-gutter); } }
+.theme-container > * { min-width: 0; }
+.catalog-rail { container-type: inline-size; scroll-padding-inline: 16px; }
+.catalog-rail-card { width: min(78cqw, var(--rail-card-max, 320px)); }
+@media (min-width: 640px) { .catalog-rail-card { width: calc((100cqw - 48px) / 2.5); max-width: var(--rail-card-max, 320px); } }
+@media (min-width: 1024px) { .catalog-rail-card { width: calc((100cqw - 72px) / 4); max-width: var(--rail-card-max, 320px); } }
+
+body:has(.catalog-filter-dialog[open]) { overflow: hidden; }
+
+.product-zoom {position:fixed;inset:0;margin:auto;width:min(95vw,1200px);max-height:95dvh;padding:20px;border-radius:24px;background:var(--background);color:var(--foreground);}
+.product-zoom::backdrop{background:#000b;}
+body:has(.product-zoom[open]){overflow:hidden;}
+
+.skip-link {position:fixed;inset-block-start:12px;inset-inline-start:12px;z-index:1000;padding:12px 20px;border-radius:999px;background:var(--foreground);color:var(--background);transform:translateY(-180%);}
+.skip-link:focus {transform:none;}
+:where(a,button,input,select,textarea,summary):focus-visible {outline:2px solid currentColor;outline-offset:3px;}
+main h1,main h2,main h3 {overflow-wrap:anywhere;}
+
+.store-menu,.cart-dialog{position:fixed;inset-block:0;inset-inline-start:0;inset-inline-end:auto;margin:0;width:min(88vw,390px);height:100dvh;max-height:100dvh;max-width:100vw;overflow-y:auto;border-radius:24px;background:var(--surface);color:var(--foreground);}
+.cart-dialog{inset-inline-start:auto;inset-inline-end:0;}
+.cart-dialog[open]{display:flex;flex-direction:column;}
+.store-menu::backdrop,.cart-dialog::backdrop{background:#0007;}
+body:has(.store-menu[open],.cart-dialog[open]){overflow:hidden;}
+
+.discovery-panel{position:absolute;inset-inline:0;top:100%;margin-inline:auto;width:min(840px,94vw);max-height:75dvh;overflow:auto;z-index:60}.discovery-menu>summary::marker{font-size:10px}
+
+.sticky-buy{display:none}@media(max-width:767px){.sticky-buy{position:fixed;inset-inline:0;bottom:0;z-index:35;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px calc(12px + env(safe-area-inset-bottom));border-radius:24px 24px 0 0;background:var(--surface);box-shadow:0 -8px 30px #0001}body:has(.sticky-buy) main{padding-bottom:96px}body:has(.sticky-buy) .fixed.bottom-6{bottom:100px}}
+
+.hero-eyebrow{color:inherit}
+
+.perfume-filter-dialog{margin:auto;width:min(94vw,680px);max-height:88dvh;overflow:auto;border:0;border-radius:24px;padding:24px;background:var(--surface);color:var(--foreground)}.perfume-filter-dialog::backdrop{background:#1c1a1780}body:has(.perfume-filter-dialog[open]){overflow:hidden}

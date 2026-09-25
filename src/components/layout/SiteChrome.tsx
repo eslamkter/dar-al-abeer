@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import {siteConfig} from "@/config/site";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
@@ -30,8 +32,9 @@ export function SiteChrome({
   return (
     <SavedListsProvider>
       <ScrollProgress />
-      <Navbar />
-      <main className="flex-1">{children}</main>
+      {siteConfig.announcement.enabled&&<aside className="bg-surface px-4 py-2 text-center text-sm"><Link href={siteConfig.announcement.href} className="inline-flex min-h-11 flex-wrap items-center justify-center gap-x-4 gap-y-1 rounded-full px-4"><span>{siteConfig.announcement.text}</span><span className="underline">{siteConfig.announcement.label}</span></Link></aside>}
+      <Navbar products={products} />
+      <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
       <Footer />
       <MiniCart products={products} />
       <FloatingButtons />

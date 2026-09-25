@@ -43,7 +43,7 @@ export function CategoryTiles({ categories }: { categories: string[] }) {
               className="h-full"
             >
               <Link
-                href={`/products?category=${encodeURIComponent(c)}`}
+                href={`/perfumes/${encodeURIComponent(c)}`}
                 className="group relative flex h-full items-center justify-center overflow-hidden rounded-xl border border-border"
               >
                 <Image

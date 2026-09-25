@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 
 /** بطل الصفحة الرئيسية: صورة بتكبير بطيء + ظهور متدرّج للنص. */
@@ -18,31 +17,31 @@ export function HomeHero() {
           className="object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-l from-foreground/55 via-foreground/35 to-foreground/10" />
+      <div className="absolute inset-0 bg-gradient-to-l from-foreground/80 via-foreground/50 to-foreground/15" />
 
       <Container className="relative z-10 py-24 text-white">
         <div className="max-w-xl">
-          <Reveal immediate>
-            <span className="eyebrow block text-gold">{siteConfig.name}</span>
-          </Reveal>
-          <Reveal immediate delay={0.12}>
+          <div>
+            <span className="eyebrow hero-eyebrow block">{siteConfig.name}</span>
+          </div>
+          <div>
             <h1 className="mt-5 font-heading text-4xl font-bold leading-tight drop-shadow sm:text-6xl">
               {siteConfig.tagline}
             </h1>
-          </Reveal>
-          <Reveal immediate delay={0.24}>
+          </div>
+          <div>
             <p className="mt-5 max-w-md text-lg font-light text-white/85">
               {siteConfig.description}
             </p>
-          </Reveal>
-          <Reveal immediate delay={0.36}>
+          </div>
+          <div>
             <Link
               href="/products"
               className="mt-9 inline-block rounded-full bg-gold px-9 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-gold-dark"
             >
               تصفّح المتجر
             </Link>
-          </Reveal>
+          </div>
         </div>
       </Container>
 

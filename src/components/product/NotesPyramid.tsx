@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { discoveryPath } from "@/lib/discovery";
 import type { FragranceProfile } from "@/lib/fragrance-notes";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -16,19 +18,7 @@ export function NotesPyramid({ profile }: { profile: FragranceProfile }) {
           <span className="eyebrow">التركيبة</span>
           <h2 className="mt-2 font-heading text-2xl font-bold">هرم النوتات</h2>
         </div>
-        <div className="text-left">
-          <div className="text-xs text-muted">قوة الثبات</div>
-          <div className="mt-1 flex gap-1" dir="ltr">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <span
-                key={i}
-                className={`h-2 w-6 rounded-full ${
-                  i < profile.intensity ? "bg-gold" : "bg-border"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
+
       </div>
 
       <div className="space-y-4">
@@ -43,12 +33,13 @@ export function NotesPyramid({ profile }: { profile: FragranceProfile }) {
               </div>
               <div className="flex flex-wrap gap-2">
                 {profile[t.key].map((note) => (
-                  <span
+                  <Link
+                    href={discoveryPath("notes", note)}
                     key={note}
                     className="rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-sm text-foreground"
                   >
                     {note}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </div>

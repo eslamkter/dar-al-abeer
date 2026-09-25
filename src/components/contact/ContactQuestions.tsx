@@ -1,0 +1,3 @@
+import Link from "next/link";
+import {contactQuestions as content} from "@/config/contact-questions";
+export function ContactQuestions(){return <section className="mt-16 max-w-3xl"><h2 className="font-heading text-2xl font-bold">{content.title}</h2><div className="mt-6 space-y-3">{content.items.map(item=><details key={item.question} className="rounded-2xl border border-border p-5"><summary className="cursor-pointer py-2 font-medium">{item.question}</summary><p className="mt-4 text-sm leading-relaxed text-muted">{item.answer}</p></details>)}</div><Link href={content.href} className="mt-4 inline-block py-3 underline">{content.help}</Link></section>;}

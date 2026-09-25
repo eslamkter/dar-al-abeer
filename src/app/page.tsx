@@ -1,3 +1,10 @@
+import {Testimonials,Newsletter} from "@/components/home/Community";
+import {Fragment} from "react";
+import {homeLayout,homeSections,homeContent} from "@/config/home";
+import { ShoppingHelp } from "@/components/home/ShoppingHelp";
+import { ScentDiscovery } from "@/components/home/ScentDiscovery";
+import { pageSeo } from "@/lib/seo";
+export const metadata = { ...pageSeo("/", false) };
 import Link from "next/link";
 import { getProducts, getCategories } from "@/lib/products";
 import { hasActiveDiscount, isNewArrival } from "@/lib/product-helpers";
@@ -53,75 +60,21 @@ export default async function HomePage() {
   const bestsellers = products.filter((p) => p.is_bestseller);
   const newArrivals = products.filter((p) => isNewArrival(p));
 
-  return (
-    <>
-      <HomeHero />
-
-      {/* شريط قيم */}
-      <section className="border-b border-border bg-surface">
-        <Container className="grid grid-cols-1 gap-6 py-8 text-center sm:grid-cols-3">
-          {[
-            ["أصالة مضمونة", "منتج أصلي 100%"],
-            ["دفع عند الاستلام", "ادفع وقت التسليم"],
-            ["شحن لكل الخليج", "توصيل سريع وآمن"],
-          ].map(([t, s]) => (
-            <div key={t}>
-              <div className="font-heading text-base font-bold text-foreground">{t}</div>
-              <div className="mt-1 text-sm text-muted">{s}</div>
-            </div>
-          ))}
-        </Container>
-      </section>
-
-      <Marquee items={["عطور شرقية", "عود فاخر", "مسك أبيض", "ورد دمشقي", "زعفران", "عنبر"]} />
-
-      {/* بلاطات التصنيفات */}
-      <CategoryTiles categories={categories} />
-
-      {/* المجموعة المميّزة */}
-      <Section eyebrow="اختيار الدار" title="المجموعة المميّزة" href="/products" products={featured} />
-
-      {/* بانر عرض */}
-      {offers.length > 0 && (
-        <section className="relative bg-foreground py-20 text-center text-background">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-background to-transparent" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-background to-transparent" />
-          <Container>
-            <Reveal>
-              <span className="eyebrow text-gold">لفترة محدودة</span>
-              <h2 className="mt-3 font-heading text-3xl font-bold">
-                عروض حصرية على تشكيلة مختارة
-              </h2>
-              <p className="mx-auto mt-2 max-w-md text-background/70">
-                خصومات تنتهي قريبًا — اقتنِ عطرك المفضّل قبل انتهاء العرض.
-              </p>
-              <Link
-                href="/products?offers=1"
-                className="mt-6 inline-block rounded-full bg-gold px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-dark"
-              >
-                تسوّق العروض
-              </Link>
-            </Reveal>
-          </Container>
-        </section>
-      )}
-
-      <Section eyebrow="لفترة محدودة" title="عروض حصرية" href="/products?offers=1" products={offers} />
-
-      <BrandStatement />
-
-      <Section eyebrow="اختيار عملائنا" title="الأكثر مبيعًا" href="/products?sort=bestseller" products={bestsellers} />
-
-      <Section eyebrow="جديدنا" title="وصل حديثًا" href="/products" products={newArrivals} />
-
-      <Container className="pb-24 text-center">
-        <Link
-          href="/products"
-          className="inline-block rounded-full border border-gold px-8 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-white"
-        >
-          عرض كل العطور
-        </Link>
-      </Container>
-    </>
-  );
+  const blocks={
+    hero:<HomeHero/>,
+    trust:<section className="border-b border-border bg-surface"><Container className="grid grid-cols-1 gap-6 py-8 text-center sm:grid-cols-3">{homeContent.trust.map(([title,text])=><div key={title}><svg className="mx-auto mb-3 text-gold" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div className="font-heading text-base font-bold text-foreground">{title}</div><div className="mt-1 text-sm text-muted">{text}</div></div>)}</Container></section>,
+    marquee:<Marquee items={homeContent.marquee}/>,
+    categories:<CategoryTiles categories={categories}/>,
+    featured:<Section {...homeContent.showcases.featured} products={featured}/>,
+    discovery:<ScentDiscovery products={products}/>,
+    offers:<Section {...homeContent.showcases.offers} products={offers}/>,
+    story:<BrandStatement/>,
+    bestsellers:<Section {...homeContent.showcases.bestsellers} products={bestsellers}/>,
+    new:<Section {...homeContent.showcases.new} products={newArrivals}/>,
+    help:<ShoppingHelp/>,
+    testimonials:<Testimonials/>,
+    newsletter:<Newsletter/>,
+    browse:<Container className="pb-24 text-center"><Link href="/products" className="inline-block rounded-full border border-gold px-8 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-white">{homeContent.browse}</Link></Container>,
+  };
+  return <>{homeLayout.filter(id=>homeSections[id]).map(id=><Fragment key={id}>{blocks[id]}</Fragment>)}</>;
 }

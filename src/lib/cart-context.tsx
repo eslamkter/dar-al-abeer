@@ -31,7 +31,7 @@ interface CartContextValue {
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
-const STORAGE_KEY = "cart";
+const STORAGE_KEY = "dar-al-abeer-cart";
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
@@ -43,13 +43,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // تحميل السلة من المتصفح أول ما الصفحة تفتح.
   useEffect(() => {
+    // Read browser storage after hydration; cancel if this provider unmounts.
+    const frame=requestAnimationFrame(()=>{
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setItems(JSON.parse(saved));
+      if (saved) {
+        const parsed: unknown = JSON.parse(saved);
+        if (Array.isArray(parsed)) setItems(parsed.filter((item): item is CartItem => !!item && typeof item.id === "string" && typeof item.name === "string" && Number.isFinite(item.price) && item.price >= 0 && Number.isInteger(item.quantity) && item.quantity > 0).map(item => ({...item,quantity:Math.min(item.quantity,item.stock ?? 99)})).filter(item => item.quantity > 0));
+      }
     } catch {
       // تجاهل أي خطأ في القراءة
     }
     setLoaded(true);
+    });
+    return()=>cancelAnimationFrame(frame);
   }, []);
 
   // حفظ السلة في المتصفح مع أي تغيير.
@@ -63,12 +70,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items, loaded]);
 
   function addItem(product: Product, quantity = 1) {
+    if (product.stock < 1 || !Number.isFinite(quantity) || quantity < 1) return;
+    quantity = Math.floor(quantity);
     setItems((prev) => {
       const existing = prev.find((i) => i.id === product.id);
       if (existing) {
         return prev.map((i) =>
           i.id === product.id
-            ? { ...i, quantity: i.quantity + quantity }
+            ? { ...i, quantity: Math.min(i.quantity + quantity, product.stock), stock: product.stock }
             : i
         );
       }
@@ -77,12 +86,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
         ...prev,
         {
           id: product.id,
+          productId: product.productId || product.id,
+          variantId: product.selectedVariantId,
           slug: product.slug,
           name: product.name,
           price: info.price, // السعر بعد الخصم لو فيه عرض
           originalPrice: info.original ?? info.price,
           image: product.image,
-          quantity,
+          quantity: Math.min(quantity, product.stock),
+          stock: product.stock,
         },
       ];
     });
@@ -94,9 +106,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   function updateQuantity(id: string, quantity: number) {
+    if (!Number.isFinite(quantity)) return;
+    quantity = Math.floor(quantity);
     if (quantity < 1) return removeItem(id);
     setItems((prev) =>
-      prev.map((i) => (i.id === id ? { ...i, quantity } : i))
+      prev.map((i) => (i.id === id ? { ...i, quantity: Math.min(quantity,i.stock ?? 99) } : i))
     );
   }
 

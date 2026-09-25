@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { siteConfig } from "@/config/site";
+import type { CSSProperties, ReactNode } from "react";
 
 /** حاوية بعرض ثابت وهوامش متناسقة لكل الصفحات. */
 export function Container({
@@ -9,7 +10,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 ${className}`}>
+    <div style={{ "--content-width": siteConfig.layout.contentWidth, "--page-gutter": siteConfig.layout.gutter, "--rail-card-max": siteConfig.layout.railCardMax } as CSSProperties} className={`mx-auto w-full theme-container ${className}`}>
       {children}
     </div>
   );

@@ -1,6 +1,9 @@
+import {relatedContent} from "@/config/related";
+import {discoveryValues} from "./discovery";
 import { supabase, isSupabaseConfigured } from "./supabase";
 import { mockProducts } from "./mock-products";
 import type { Product } from "./types";
+import {serviceConfig} from "@/config/service-adapter";
 
 /**
  * طبقة الوصول للبيانات.
@@ -9,9 +12,11 @@ import type { Product } from "./types";
  */
 
 export async function getProducts(): Promise<Product[]> {
+  if (serviceConfig.mode === "demo") return mockProducts;
   if (isSupabaseConfigured && supabase) {
     const { data, error } = await supabase.from("products").select("*");
-    if (!error && data) return data as Product[];
+    if (error) throw new Error("Product service unavailable");
+    return (data ?? []) as Product[];
   }
   return mockProducts;
 }
@@ -23,7 +28,9 @@ export async function getRelatedProducts(
 ): Promise<Product[]> {
   const all = await getProducts();
   return all
-    .filter((p) => p.category === product.category && p.id !== product.id)
+    .filter(p=>p.id!==product.id && !(relatedContent.complements[product.slug]??[]).includes(p.slug) && (p.kind??"perfume")===(product.kind??"perfume"))
+    .map(p=>({product:p,score:Number(p.category===product.category)*2+discoveryValues(p,"notes").filter(n=>discoveryValues(product,"notes").includes(n)).length}))
+    .filter(p=>p.score>0).sort((a,b)=>b.score-a.score).map(p=>p.product)
     .slice(0, limit);
 }
 
@@ -38,13 +45,15 @@ export async function getCategories(): Promise<string[]> {
 export async function getProductBySlug(
   slug: string
 ): Promise<Product | null> {
+  if (serviceConfig.mode === "demo") return mockProducts.find(p=>p.slug===slug)??null;
   if (isSupabaseConfigured && supabase) {
     const { data, error } = await supabase
       .from("products")
       .select("*")
       .eq("slug", slug)
-      .single();
-    if (!error && data) return data as Product;
+      .maybeSingle();
+    if (error) throw new Error("Product service unavailable");
+    return data as Product | null;
   }
   return mockProducts.find((p) => p.slug === slug) ?? null;
 }

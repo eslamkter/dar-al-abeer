@@ -34,7 +34,10 @@ const COMPARE_KEY = "dar-al-abeer-compare";
 function readList(key: string): SavedItem[] {
   try {
     const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : [];
+    const value:unknown=raw?JSON.parse(raw):[];
+    if(!Array.isArray(value))return [];
+    const unique=new Set<string>();
+    return value.filter((item):item is SavedItem=>{if(!item||typeof item!=="object"||typeof item.slug!=="string"||!item.slug||/[/?#]/.test(item.slug)||typeof item.name!=="string"||typeof item.image!=="string"||!Number.isFinite(item.price)||unique.has(item.slug))return false;unique.add(item.slug);return true;}).slice(0,100);
   } catch {
     return [];
   }
@@ -52,9 +55,13 @@ export function SavedListsProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    // Read browser storage after hydration; cancel if this provider unmounts.
+    const frame=requestAnimationFrame(()=>{
     setWishlist(readList(WISHLIST_KEY));
     setCompare(readList(COMPARE_KEY));
     setHydrated(true);
+    });
+    return()=>cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {

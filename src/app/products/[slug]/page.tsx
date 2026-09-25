@@ -1,18 +1,20 @@
+import {relatedContent} from "@/config/related";
+import {getProducts} from "@/lib/products";
+import {BackToResults} from "@/components/product/CatalogNavigation";
+import { ProductPresentation } from "@/components/product/ProductPresentation";
+import { selectVariant } from "@/lib/variants";
+import { ProductSchema } from "@/components/product/ProductSchema";
+import { pageSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getRelatedProducts } from "@/lib/products";
-import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductGrid } from "@/components/product/ProductGrid";
-import { AddToCartButton } from "@/components/product/AddToCartButton";
 import { NotesPyramid } from "@/components/product/NotesPyramid";
-import { TrustBadges } from "@/components/product/TrustBadges";
-import { Countdown } from "@/components/product/Countdown";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
-import { siteConfig } from "@/config/site";
 import { getFragranceProfile } from "@/lib/fragrance-notes";
-import { getPriceInfo, getBadges, LOW_STOCK_THRESHOLD } from "@/lib/product-helpers";
+import { getPriceInfo } from "@/lib/product-helpers";
 
 // ديناميكية: تعكس السعر/العرض/المخزون الحيّ دائمًا (مهم للعروض المؤقتة).
 export const dynamic = "force-dynamic";
@@ -21,28 +23,32 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
 }: PageProps<"/products/[slug]">): Promise<Metadata> {
+  const routeParams = await params;
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) return { title: "منتج غير موجود" };
 
-  return {
+  return { ...pageSeo(`/products/${encodeURIComponent(routeParams.slug)}`),
     title: product.seo_title || product.name,
     description: product.seo_description || product.shortDescription,
   };
 }
 
 export default async function ProductPage({
-  params,
+  params, searchParams,
 }: PageProps<"/products/[slug]">) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const related = await getRelatedProducts(product);
+  const related = await getRelatedProducts(product,relatedContent.max);
+  const complementary=(await getProducts()).filter(p=>(relatedContent.complements[product.slug]??[]).includes(p.slug));
   const profile = getFragranceProfile(product.slug);
-  const price = getPriceInfo(product);
-  const badges = getBadges(product);
-  const lowStock = product.stock > 0 && product.stock <= LOW_STOCK_THRESHOLD;
+  const query = await searchParams;
+  const requestedVariant = typeof query.variant === "string" ? query.variant : undefined;
+  const variant = product.variants?.find(v=>v.id===requestedVariant)?.id || product.variants?.find(v=>v.stock>0)?.id || product.variants?.[0]?.id;
+  const selected = selectVariant(product,variant);
+  const price = getPriceInfo(selected);
   const images =
     product.gallery && product.gallery.length > 0
       ? product.gallery
@@ -50,6 +56,7 @@ export default async function ProductPage({
 
   return (
     <Container className="py-10">
+      <ProductSchema variants={product.variants} category={product.category} name={product.name} description={product.description} images={images} price={price.price} available={selected.stock > 0} path={`/products/${product.slug}`} />
       {/* مسار التنقل */}
       <nav className="mb-6 text-sm text-muted">
         <Link href="/" className="hover:text-gold">
@@ -60,95 +67,27 @@ export default async function ProductPage({
           المتجر
         </Link>
         <span className="mx-2">/</span>
+        {product.category&&<><Link href={`/perfumes/${encodeURIComponent(product.category)}`} className="hover:text-gold">{product.category}</Link><span className="mx-2">/</span></>}
         <span className="text-foreground">{product.name}</span>
       </nav>
 
-      <div className="grid gap-10 lg:grid-cols-2">
-        {/* معرض الصور */}
-        <ProductGallery images={images} alt={product.name} />
-
-        {/* بيانات المنتج */}
-        <div className="flex flex-col">
-          <div className="flex items-center gap-2">
-            {product.category && (
-              <span className="text-sm text-gold">{product.category}</span>
-            )}
-            {badges.map((b) => (
-              <span
-                key={b.label}
-                className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
-                  b.tone === "ember"
-                    ? "bg-ember text-white"
-                    : b.tone === "hot"
-                    ? "bg-[#b23a2b] text-white"
-                    : b.tone === "new"
-                    ? "bg-foreground text-background"
-                    : "bg-gold text-white"
-                }`}
-              >
-                {b.label}
-              </span>
-            ))}
-          </div>
-          <h1 className="mt-1 font-heading text-3xl font-bold sm:text-4xl">
-            {product.name}
-          </h1>
-
-          {/* السعر */}
-          <div className="mt-4 flex items-baseline gap-3">
-            <span className="text-3xl font-bold text-foreground">
-              {price.price} {siteConfig.currency}
-            </span>
-            {price.original && (
-              <>
-                <span className="text-lg text-muted line-through">
-                  {price.original} {siteConfig.currency}
-                </span>
-                <span className="rounded-full bg-ember px-2 py-0.5 text-xs font-semibold text-white">
-                  وفّر {price.discountPct}%
-                </span>
-              </>
-            )}
-          </div>
-
-          {/* عدّاد نهاية العرض */}
-          {price.endsAt && <Countdown endsAt={price.endsAt} />}
-
-          {/* التوفّر / الندرة */}
-          <p className={`mt-3 text-sm ${lowStock ? "font-semibold text-ember" : "text-muted"}`}>
-            {product.stock <= 0
-              ? "غير متوفر حاليًا"
-              : lowStock
-              ? `أسرع! باقي ${product.stock} قطع فقط`
-              : `متوفر — ${product.stock} قطعة`}
-          </p>
-
-          <p className="mt-6 leading-relaxed text-foreground/80">
-            {product.description}
-          </p>
-
-          <div className="mt-8 max-w-xs">
-            <AddToCartButton product={product} />
-          </div>
-
-          <TrustBadges />
-        </div>
-      </div>
+      <BackToResults/><ProductPresentation product={product} initialVariant={variant} />
 
       {/* هرم النوتات (التركيبة) */}
-      {profile && <NotesPyramid profile={profile} />}
+      {profile && product.kind !== "incense" && product.kind !== "oud" && <NotesPyramid profile={profile} />}
 
       {/* منتجات مشابهة */}
       {related.length > 0 && (
         <section className="mt-20">
           <Reveal>
             <h2 className="mb-8 font-heading text-2xl font-bold">
-              منتجات مشابهة
+              {relatedContent.similar}
             </h2>
           </Reveal>
           <ProductGrid products={related} />
         </section>
       )}
+    {!!complementary.length&&<section className="mt-16"><h2 className="mb-8 font-heading text-2xl font-bold">{relatedContent.complementary}</h2><ProductGrid products={complementary}/></section>}
     </Container>
   );
 }

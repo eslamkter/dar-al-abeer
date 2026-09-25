@@ -5,13 +5,13 @@ import type { Product } from "@/lib/types";
 import { useCart } from "@/lib/cart-context";
 
 /** زرار الإضافة للسلة. */
-export function AddToCartButton({ product }: { product: Product }) {
+export function AddToCartButton({ product, quantity = 1 }: { product: Product; quantity?: number }) {
   const { addItem } = useCart();
   const [added, setAdded] = useState(false);
   const outOfStock = product.stock <= 0;
 
   function handleClick() {
-    addItem(product);
+    addItem(product, quantity);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   }

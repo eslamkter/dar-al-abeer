@@ -1,3 +1,4 @@
+import { siteUrl, indexable } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Amiri, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
@@ -21,6 +22,8 @@ const body = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
+  robots: { index: indexable, follow: true },
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
@@ -38,6 +41,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${heading.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <a href="#main-content" className="skip-link">انتقل إلى المحتوى</a>
         <CartProvider>
           <SiteChrome products={products}>{children}</SiteChrome>
         </CartProvider>

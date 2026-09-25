@@ -1,64 +1,13 @@
 "use client";
-
-import { useState } from "react";
+import {SearchSuggestions} from "./SearchSuggestions";
+import type {Product} from "@/lib/types";
+import {useRef,useState} from "react";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-
-/** قائمة الموبايل (زر + لوحة منسدلة). */
-export function MobileNav() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="md:hidden">
-      <button
-        type="button"
-        aria-label="القائمة"
-        onClick={() => setOpen((o) => !o)}
-        className="flex h-9 w-9 items-center justify-center rounded-md text-foreground hover:text-gold"
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          {open ? (
-            <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
-          ) : (
-            <path d="M3 12h18M3 6h18M3 18h18" strokeLinecap="round" />
-          )}
-        </svg>
-      </button>
-
-      {open && (
-        <div className="absolute inset-x-0 top-16 border-b border-border bg-surface shadow-lg">
-          <form method="get" action="/products" className="border-b border-border p-4">
-            <input
-              type="search"
-              name="q"
-              placeholder="ابحث عن عطر..."
-              className="w-full rounded-full border border-border bg-background px-4 py-2 text-sm outline-none focus:border-gold"
-            />
-          </form>
-          <nav className="flex flex-col p-2">
-            {siteConfig.nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-4 py-3 text-sm text-foreground hover:bg-background hover:text-gold"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* معلومات التواصل واللغة — مطوية هنا بدل شريط علوي منفصل
-              على الموبايل (شاشة ضيقة ما تستحملش شريط تاني). */}
-          <div className="flex items-center justify-between border-t border-border p-4">
-            <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`} className="text-sm text-muted" dir="ltr">
-              {siteConfig.contact.phone}
-            </a>
-            <LanguageSwitcher />
-          </div>
-        </div>
-      )}
-    </div>
-  );
+import {siteConfig} from "@/config/site";
+export function MobileNav({products}:{products:Product[]}){
+ const dialog=useRef<HTMLDialogElement>(null);
+ const [open,setOpen]=useState(false);
+ function close(){dialog.current?.close();setOpen(false);}
+ return <div className="md:hidden"><button type="button" aria-label="القائمة" aria-expanded={open} aria-controls="mobile-menu" onClick={()=>{dialog.current?.showModal();setOpen(true);}} className="flex h-11 w-11 items-center justify-center rounded-full border border-border"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+ <dialog ref={dialog} id="mobile-menu" className="store-menu" aria-label="القائمة" onClose={()=>setOpen(false)} onClick={e=>{if(e.target===e.currentTarget)close();}}><div className="p-6"><div className="flex items-center justify-between"><span className="font-heading text-xl">{siteConfig.name}</span><button type="button" onClick={close} className="min-h-11 rounded-full border border-border px-4">إغلاق</button></div><SearchSuggestions products={products} drawer onNavigate={close}/><nav className="grid gap-2">{siteConfig.nav.map(item=><Link key={item.href} href={item.href} onClick={close} className="rounded-xl px-4 py-3 hover:bg-background">{item.label}</Link>)}<Link href="/wishlist" onClick={close} className="rounded-xl px-4 py-3">{siteConfig.savedLists.title}</Link><Link href="/scent-finder" onClick={close} className="rounded-xl px-4 py-3">اعثر على عطرك</Link></nav></div></dialog></div>;
 }

@@ -1,10 +1,11 @@
-import Link from "next/link";
-import Image from "next/image";
+import {CatalogLink} from "./CatalogNavigation";
+import Image from "./ProductImage";
 import type { Product } from "@/lib/types";
 import { siteConfig } from "@/config/site";
 import { getPriceInfo, getBadges, type Badge } from "@/lib/product-helpers";
 import { QuickAddButton } from "./QuickAddButton";
 import { SaveToggleButtons } from "./SaveToggleButtons";
+import {discoveryValues} from "@/lib/discovery";
 
 const toneClass: Record<Badge["tone"], string> = {
   gold: "bg-gold text-white",
@@ -21,11 +22,10 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(28,26,23,0.35)]">
       {/* إضافة سريعة + مفضلة/مقارنة (فوق الرابط) */}
-      <QuickAddButton product={product} />
       <SaveToggleButtons product={product} />
 
-      <Link
-        href={`/products/${product.slug}`}
+      <CatalogLink
+        href={`/products/${product.slug}${product.selectedVariantId?`?variant=${encodeURIComponent(product.selectedVariantId)}`:""}`}
         className="flex flex-1 flex-col"
       >
       <div className="relative aspect-square overflow-hidden bg-background">
@@ -62,6 +62,8 @@ export function ProductCard({ product }: { product: Product }) {
           {product.shortDescription}
         </p>
 
+        <p className="mt-2 text-xs text-muted">{[product.brand||siteConfig.name,product.size,product.concentration].filter(Boolean).join(" · ")}</p>
+        {(!product.kind||product.kind==="perfume")&&<p className="mt-2 line-clamp-1 text-xs text-muted">{discoveryValues(product,"notes").slice(0,3).join(" · ")}</p>}
         {/* السعر */}
         <div className="mt-3 flex items-baseline gap-2">
           <span className="font-semibold text-foreground">
@@ -74,7 +76,8 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
       </div>
-      </Link>
+      </CatalogLink>
+      <QuickAddButton product={product} />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 /** عنصر داخل سلة التسوق. */
 export interface CartItem {
+  productId?: string;
+  variantId?: string;
   id: string;
   slug: string;
   name: string;
@@ -7,6 +9,7 @@ export interface CartItem {
   originalPrice?: number; // السعر قبل الخصم (لحساب التوفير)
   image: string;
   quantity: number;
+  stock?: number;
 }
 
 /** بيانات العميل عند تأكيد الطلب. */
@@ -31,6 +34,18 @@ export interface Order {
 
 /** نوع المنتج — نفس الشكل في قاعدة بيانات Supabase لاحقًا. */
 export interface Product {
+  brand?: string;
+  unitPrice?: { quantity: number; referenceQuantity: number; unit: string };
+  productId?: string;
+  selectedVariantId?: string;
+  kind?: "perfume" | "incense" | "oud";
+  concentration?: string;
+  intensity?: string;
+  size?: string;
+  origin?: string;
+  usage?: string;
+  care?: string;
+  variants?: { unitPrice?: { quantity:number;referenceQuantity:number;unit:string }; id: string; label: string; price: number; stock: number; image?: string; gallery?: string[] }[];
   id: string;
   slug: string;
   name: string;

@@ -1,8 +1,10 @@
+import { pageSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
+  ...pageSeo("/terms"),
   title: "الشروط والأحكام",
   description: `الشروط والأحكام الخاصة بـ ${siteConfig.name}.`,
 };

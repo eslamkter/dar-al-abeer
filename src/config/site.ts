@@ -4,6 +4,9 @@
  * من غير ما يلمس باقي الكود.
  */
 export const siteConfig = {
+  savedLists:{compare:false,title:"المفضلة",empty:"لم تحفظ أي عطر بعد.",available:"متوفر — راجع الأحجام والأسعار الحالية",unavailable:"غير متوفر حاليًا",removed:"هذا المنتج لم يعد متاحًا.",remove:"إزالة من المفضلة",shop:"استكشف العطور"},
+  layout: { contentWidth: "1440px", gutter: "clamp(16px, 3vw, 48px)", railCardMax: "320px" },
+  announcement: {enabled:true,text:"تعرّف على النوتات واختر عطرك بثقة",label:"دليل اختيار العطر",href:"/help/choose-fragrance"},
   name: "دار العبير",
   tagline: "عطور فاخرة تروي حكايتك",
   description:
@@ -12,6 +15,10 @@ export const siteConfig = {
   direction: "rtl" as const,
   currency: "ر.س",
   contact: {
+    enabled: false,
+    demoTitle:"اختر عطرك بثقة",
+    demoIntro:"استخدم أدلة الاختيار أو احفظ استفسارك في تجربة التواصل.",
+    demoLinks:[{label:"دليل اختيار العطر",href:"/help/choose-fragrance"},{label:"مكتبة النوتات",href:"/notes"},{label:"الشحن والاستبدال",href:"/help/shipping"}],
     phone: "+966 55 412 3987",
     // رقم واتساب بصيغة دولية بدون + أو مسافات (للرابط wa.me)
     whatsapp: "966554123987",
@@ -34,7 +41,7 @@ export const siteConfig = {
   // الثيمات)، هيتوصّل بنظام ترجمة حقيقي لاحقًا. الوجود والتفاعل حقيقيين،
   // الترجمة الفعلية لسه لأ.
   languageSwitcher: {
-    enabled: true,
+    enabled: false,
     options: ["AR", "EN"] as const,
   },
   // أزرار عائمة — كل زرار يتفعّل/يتقفل من هنا لوحده (مطابق لإعداد لوحة
@@ -43,9 +50,9 @@ export const siteConfig = {
   // الثيمات التانية أبسط كتالوج فمنعطّلين افتراضيًا فيها.
   floatingButtons: {
     backToTop: true,
-    whatsapp: true,
-    compare: true,
-    wishlist: true,
+    whatsapp: false,
+    compare: false,
+    wishlist: false,
   },
   // صور الهوية — صورة مميّزة لكل صفحة (تتغيّر من هنا بس).
   images: {

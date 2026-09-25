@@ -1,5 +1,7 @@
 "use client";
 
+import {CatalogLink} from "./CatalogNavigation";
+import { productUi } from "@/config/product";
 import type { Product } from "@/lib/types";
 import { useCart } from "@/lib/cart-context";
 
@@ -15,6 +17,7 @@ export function QuickAddButton({ product }: { product: Product }) {
     addItem(product); // بتفتح السلة المنبثقة تلقائيًا
   }
 
+  if (product.variants?.length) return <CatalogLink href={`/products/${product.slug}${product.selectedVariantId?`?variant=${encodeURIComponent(product.selectedVariantId)}`:""}`} className="mx-4 mb-4 rounded-full border border-border px-4 py-3 text-center text-sm">{productUi.select}</CatalogLink>;
   if (outOfStock) return null;
 
   return (
@@ -22,7 +25,7 @@ export function QuickAddButton({ product }: { product: Product }) {
       type="button"
       onClick={handleClick}
       aria-label="إضافة سريعة للسلة"
-      className="absolute inset-x-3 bottom-3 z-10 translate-y-2 rounded-full bg-foreground/90 px-4 py-2 text-sm font-semibold text-background opacity-0 shadow-lg backdrop-blur transition-all duration-300 hover:bg-gold hover:text-white group-hover:translate-y-0 group-hover:opacity-100"
+      className="mx-4 mb-4 min-h-11 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-colors duration-200 hover:bg-gold hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
     >
       + إضافة سريعة
     </button>

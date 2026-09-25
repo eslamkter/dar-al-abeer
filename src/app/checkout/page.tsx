@@ -3,27 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/lib/cart-context";
-import { createOrder } from "@/lib/orders";
+import {serviceConfig,serviceMessages} from "@/config/service-adapter";
+import {useServiceSubmission} from "@/lib/use-service-submission";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
 export default function CheckoutPage() {
   const { items, totalPrice, totalOriginal, totalSavings, clear } = useCart();
   const [form, setForm] = useState({ name: "", phone: "", address: "" });
-  const [submitting, setSubmitting] = useState(false);
-  const [orderRef, setOrderRef] = useState<string | null>(null);
-
-  async function handleSubmit(e: React.FormEvent) {
+  const {pending:submitting,receipt,error,submit}=useServiceSubmission();
+  const orderRef=receipt?.id;
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (submitting) return;
-    setSubmitting(true);
-    try {
-      const order = await createOrder(form, items, totalPrice);
-      setOrderRef(order.id);
-      clear();
-    } finally {
-      setSubmitting(false);
-    }
+    const result=await submit("order",{...form,total:totalPrice,payment:"cod",items:items.map(item=>({productId:item.productId??item.id,variantId:item.variantId,quantity:item.quantity,name:item.name,unitPrice:item.price}))});
+    if(result)clear();
   }
 
   // ===== رسالة التأكيد بعد إرسال الطلب =====
@@ -34,14 +27,14 @@ export default function CheckoutPage() {
           ✓
         </div>
         <h1 className="mt-6 font-heading text-3xl font-bold">
-          تم استلام طلبك بنجاح
+          {receipt?.demo?"تم حفظ طلبك التجريبي":"تم استلام طلبك بنجاح"}
         </h1>
         <p className="mt-3 text-muted">
           شكرًا لك. رقم طلبك هو{" "}
           <span className="font-bold text-foreground">{orderRef}</span>
         </p>
         <p className="mt-1 text-muted">
-          سنتواصل معك قريبًا على رقم هاتفك لتأكيد التفاصيل.
+          {receipt?.demo?serviceMessages.demoSuccess.ar:serviceMessages.liveSuccess.ar}
         </p>
         <Link
           href="/products"
@@ -74,6 +67,8 @@ export default function CheckoutPage() {
     <Container className="py-12">
       <h1 className="mb-8 font-heading text-3xl font-bold">إتمام الطلب</h1>
 
+      {serviceConfig.mode === "demo" && <p role="note" className="mb-6 rounded-2xl border border-border p-4">نسخة عرض — يُحفظ طلب تجريبي في هذه الجلسة دون تحصيل مبالغ.</p>}
+      {error && <p role="alert" className="mb-6 rounded-2xl border border-ember p-4">{error}</p>}
       <div className="grid gap-8 lg:grid-cols-3">
         <form onSubmit={handleSubmit} className="space-y-4 lg:col-span-2">
           <Field
@@ -94,6 +89,7 @@ export default function CheckoutPage() {
               العنوان <span className="text-gold">*</span>
             </label>
             <textarea
+              aria-label="العنوان"
               required
               rows={3}
               value={form.address}
@@ -107,7 +103,7 @@ export default function CheckoutPage() {
             disabled={submitting}
             className="w-full rounded-full bg-gold px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-dark disabled:opacity-60"
           >
-            {submitting ? "جارٍ إرسال الطلب..." : "تأكيد الطلب"}
+            {submitting ? "جارٍ إرسال الطلب..." : serviceConfig.mode === "live" ? "تأكيد الطلب" : "تأكيد الطلب التجريبي"}
           </button>
           <p className="text-center text-xs text-muted">
             الدفع عند الاستلام — لا حاجة لبطاقة الآن.
@@ -177,6 +173,7 @@ function Field({
         {label} {required && <span className="text-gold">*</span>}
       </label>
       <input
+        aria-label={label}
         type={type}
         required={required}
         value={value}

@@ -1,3 +1,6 @@
+import {DiscoveryMenu} from "./DiscoveryMenu";
+import {SearchSuggestions} from "./SearchSuggestions";
+import type {Product} from "@/lib/types";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -25,8 +28,8 @@ const socialIcons: Record<string, React.ReactNode> = {
   ),
 };
 
-export function Navbar() {
-  const social = Object.entries(siteConfig.contact.social);
+export function Navbar({products}:{products:Product[]}) {
+  const social = siteConfig.contact.enabled?Object.entries(siteConfig.contact.social):[];
   const navLeft = siteConfig.nav.slice(0, 2);
   const navRight = siteConfig.nav.slice(2);
 
@@ -40,17 +43,17 @@ export function Navbar() {
     // "merged" في site.ts فاضل زي ما هو): صف رفيع فوق للمعلومات، وصف
     // رئيسي تحت للشعار/القائمة. الفصل ده حلّ الازدحام اللي كان حاصل
     // لما كل حاجة كانت متلزّقة في صف واحد.
-    <header className="border-b border-border bg-surface">
+    <header className="relative z-40 border-b border-border bg-surface">
       {/* الصف العلوي — هاتف / سوشيال / لغة، ظاهر من xl بس */}
-      <div className="hidden border-b border-border-soft md:block">
-        <Container className="flex h-9 items-center justify-between text-xs">
-          <a
+      {siteConfig.contact.enabled&&<div className="hidden border-b border-border-soft md:block">
+        <Container className="flex min-h-11 items-center justify-between text-sm">
+          {siteConfig.contact.enabled&&<a
             href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
             className="text-muted transition-colors hover:text-gold"
             dir="ltr"
           >
             {siteConfig.contact.phone}
-          </a>
+          </a>}
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3 text-muted">
               {social.map(([key, href]) => (
@@ -60,7 +63,7 @@ export function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={key}
-                  className="transition-colors hover:text-gold"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center transition-colors hover:text-gold"
                 >
                   {socialIcons[key]}
                 </a>
@@ -69,13 +72,13 @@ export function Navbar() {
             <LanguageSwitcher />
           </div>
         </Container>
-      </div>
+      </div>}
 
       {/* الصف الرئيسي — شعار في النص، القائمة متقسّمة حواليه */}
       <Container>
         <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-6">
           <nav className="hidden items-center gap-10 md:flex">
-            {navLeft.map((item) => (
+            {navLeft.map((item) => item.href==="/products" ? <DiscoveryMenu key={item.href} products={products}/> : (
               <Link
                 key={item.href}
                 href={item.href}
@@ -84,6 +87,7 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/wishlist" className="nav-link whitespace-nowrap py-3 text-sm text-muted hover:text-gold">{siteConfig.savedLists.title}</Link>
           </nav>
 
           <Link
@@ -107,17 +111,9 @@ export function Navbar() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <form method="get" action="/products" className="hidden sm:block">
-                <input
-                  type="search"
-                  name="q"
-                  placeholder="ابحث..."
-                  aria-label="بحث"
-                  className="w-24 rounded-full border border-border bg-background px-4 py-1.5 text-sm outline-none transition-all focus:w-36 focus:border-gold"
-                />
-              </form>
+              <SearchSuggestions products={products}/>
               <CartLink />
-              <MobileNav />
+              <MobileNav products={products} />
             </div>
           </div>
         </div>

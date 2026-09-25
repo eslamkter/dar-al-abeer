@@ -1,0 +1,3 @@
+import Link from "next/link";import {Container} from "@/components/ui/Container";import {helpContent as content} from "@/config/help";import {pageSeo} from "@/lib/seo";
+export const metadata={...pageSeo("/help"),title:content.title,description:"دليل التصفح واختيار المنتجات ومعلومات الشراء."};
+export default function Help(){return <Container className="py-16"><h1 className="font-heading text-3xl font-bold">{content.title}</h1><dl className="mt-8 divide-y divide-border">{content.topics.map(t=><div key={t.slug} className="py-6"><dt><Link className="text-xl underline" href={`/help/${t.slug}`}>{t.title}</Link></dt><dd className="mt-3 max-w-2xl text-muted">{t.intro}</dd></div>)}</dl></Container>;}

@@ -1,0 +1,1 @@
+export const productUi={choose:"الحجم / الوزن",quantity:"الكمية",concentration:"التركيز",size:"الحجم / الوزن",origin:"المنشأ",usage:"طريقة الاستخدام",care:"العناية والحفظ",available:"متوفر",unavailable:"غير متوفر حاليًا",shipping:"الشحن والاستبدال",shippingHref:"/help/shipping",select:"اختر الخيارات",facts:"تفاصيل المنتج"};

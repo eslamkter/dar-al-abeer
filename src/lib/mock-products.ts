@@ -1,3 +1,4 @@
+import {demoProductOverrides} from "@/config/demo-catalog";
 import type { Product } from "./types";
 
 /**
@@ -13,7 +14,7 @@ const img = {
   saffron: "https://images.unsplash.com/photo-1557170334-a9632e77c6e4?w=800&q=80",
 };
 
-export const mockProducts: Product[] = [
+const baseProducts: Product[] = [
   { id: "1", slug: "oud-royale", name: "عود رويال", price: 540, shortDescription: "عود كمبودي فاخر بلمسة من المسك الأبيض.", description: "عطر شرقي فاخر يجمع بين دفء العود الكمبودي الأصيل ونعومة المسك الأبيض. ثباته عالٍ يدوم طوال اليوم.", image: img.oud, gallery: [img.oud, img.saffron, img.amber], stock: 12, category: "عطور شرقية", gender: "للجنسين", is_featured: true, is_bestseller: true, created_at: "2025-06-01" },
   { id: "2", slug: "rose-damascena", name: "وردة دمشقية", price: 380, shortDescription: "ماء الورد الدمشقي مع قاعدة من خشب الصندل.", description: "عبير الوردة الدمشقية النقية في تناغم راقٍ مع خشب الصندل.", image: img.rose, stock: 20, category: "عطور زهرية", gender: "نسائي", created_at: "2025-06-05" },
   { id: "3", slug: "amber-nights", name: "ليالي العنبر", price: 460, shortDescription: "عنبر دافئ مع توابل شرقية وفانيليا.", description: "تركيبة غنية من العنبر الدافئ والتوابل الشرقية والفانيليا.", image: img.amber, gallery: [img.amber, img.musk], stock: 8, category: "عطور شرقية", gender: "للجنسين", sale_price: 390, discount_start: "2026-09-01", discount_end: "2026-09-30", is_featured: true, created_at: "2025-07-10" },
@@ -35,3 +36,5 @@ export const mockProducts: Product[] = [
   { id: "19", slug: "imperial-saffron", name: "زعفران إمبراطوري", price: 650, shortDescription: "زعفران نادر مع ورد وعود.", description: "مزيج إمبراطوري من الزعفران النادر والورد التركي والعود.", image: img.saffron, stock: 6, category: "عطور شرقية", gender: "للجنسين", sale_price: 540, discount_start: "2026-09-01", discount_end: "2026-09-30", is_featured: true, badge: "أفضل قيمة", created_at: "2025-05-01" },
   { id: "20", slug: "fresh-bergamot", name: "برغموت منعش", price: 280, shortDescription: "برغموت إيطالي مع زنجبيل.", description: "حيوية البرغموت الإيطالي مع لسعة الزنجبيل، انتعاش نهاري.", image: img.citrus, stock: 24, category: "عطور منعشة", gender: "رجالي", created_at: "2025-09-05" },
 ];
+
+export const mockProducts:Product[]=baseProducts.map(p=>({...p,...demoProductOverrides[p.slug]}));
