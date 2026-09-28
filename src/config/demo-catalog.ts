@@ -2,7 +2,7 @@ import type {Product} from "@/lib/types";
 export const demoProductOverrides:Record<string,Partial<Product>>={
   "oud-royale": {
     intensity: "غني",
-    "brand": "دار العبير",
+    "brand": "شَـذَا",
     "kind": "perfume",
     "concentration": "Eau de Parfum",
     "size": "100 مل",
@@ -50,7 +50,7 @@ export const demoProductOverrides:Record<string,Partial<Product>>={
   },
   "rose-damascena": {
     intensity: "متوازن",
-    "brand": "دار العبير",
+    "brand": "شَـذَا",
     "kind": "perfume",
     "concentration": "Eau de Parfum",
     "size": "75 مل",

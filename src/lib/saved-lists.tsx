@@ -46,7 +46,7 @@ function readList(key: string): SavedItem[] {
 /**
  * قوائم "المفضلة" و"المقارنة" الحقيقية — بتتخزّن محليًا (localStorage)
  * وتتزامن مع زرار SaveToggleButtons في كل بطاقة منتج، والأزرار العائمة
- * في FloatingButtons. مفعّلة في دار العبير بس (عنده لوحة تحكم منتجات
+ * في FloatingButtons. مفعّلة في شَـذَا بس (عنده لوحة تحكم منتجات
  * حقيقية) — الثيمات التانية مش بتفعّل الأزرار العائمة دي أصلًا.
  */
 export function SavedListsProvider({ children }: { children: ReactNode }) {
