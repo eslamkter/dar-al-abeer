@@ -1,1 +1,0 @@
-export const relatedContent={similar:"عطور قريبة من اختيارك",complementary:"اكتشف معه",max:3,complements:{"oud-royale":["cambodian-oud","white-musk"],"rose-damascena":["white-musk"],"cambodian-oud":["oud-royale","white-musk"]} as Record<string,string[]>};

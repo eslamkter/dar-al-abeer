@@ -1,1 +1,0 @@
-export const navigationUi={products:"المنتجات",notes:"النوتات",categories:"التصنيفات",brands:"العلامات",finder:"جرّب مساعد الاختيار",filters:"تصفية المنتجات",close:"إغلاق",back:"العودة إلى نتائج التصفح",browse:"تصفح المتجر",all:"كل العطور",search:"ابحث عن عطر أو نوتة",results:"نتائج مقترحة",empty:"لا توجد اقتراحات مطابقة",showAll:"عرض نتائج البحث"};

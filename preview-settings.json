@@ -1,0 +1,5096 @@
+{
+  "version": 1,
+  "id": "shadha",
+  "preview": true,
+  "indexable": false,
+  "origin": "https://shadha.example",
+  "brand": {
+    "ar": "شَـذَا",
+    "en": "SHADHA"
+  },
+  "tagline": {
+    "ar": "أثرٌ يشبهك",
+    "en": "A trace of you"
+  },
+  "currency": "SAR",
+  "tokens": {
+    "canvas": "#F5F2EB",
+    "ink": "#332C28",
+    "muted": "#756A60",
+    "accent": "#62513C",
+    "onAccent": "#FFFFFF",
+    "surface": "#EEE8DC",
+    "line": "#DAD1C2",
+    "pageWidth": 1440,
+    "gutter": 32,
+    "sectionGap": 64,
+    "radius": 24,
+    "microMs": 220,
+    "revealMs": 800
+  },
+  "background": {
+    "texture": "/images/mineral-grain.svg",
+    "size": 240
+  },
+  "fonts": {
+    "ar": {
+      "heading": "Almarai",
+      "body": "Almarai"
+    },
+    "en": {
+      "heading": "Plex Arabic",
+      "body": "Plex Arabic"
+    },
+    "registry": [
+      {
+        "family": "Almarai",
+        "src": "/fonts/almarai.ttf",
+        "weight": 400
+      },
+      {
+        "family": "Almarai",
+        "src": "/fonts/almarai-bold.ttf",
+        "weight": 700
+      },
+      {
+        "family": "Plex Arabic",
+        "src": "/fonts/PlexArabic-Regular.ttf",
+        "weight": 400
+      },
+      {
+        "family": "Plex Arabic",
+        "src": "/fonts/PlexArabic-Medium.ttf",
+        "weight": 500
+      },
+      {
+        "family": "Plex Arabic",
+        "src": "/fonts/PlexArabic-SemiBold.ttf",
+        "weight": 600
+      }
+    ]
+  },
+  "motion": "calm",
+  "announcement": {
+    "enabled": true,
+    "text": {
+      "ar": "من أول نفحة، تبدأ حكايتك. اكتشف مجموعة شذا.",
+      "en": "Your story begins with the first note. Discover Shadha."
+    },
+    "href": "/collections/signatures"
+  },
+  "home": [
+    {
+      "id": "hero",
+      "kind": "hero",
+      "enabled": true,
+      "title": {
+        "ar": "حكاية تبدأ بالعنبر،\nوتبقى معك.",
+        "en": "Amber begins\nthe story."
+      },
+      "body": {
+        "ar": "عطور تلامس الذاكرة، وعود يملأ المكان دفئًا.\nاكتشف تفاصيل صغيرة تترك أثرًا يشبهك.",
+        "en": "Fragrances that stir a memory. Oud that warms a room.\nDiscover the small details that feel like you."
+      },
+      "action": {
+        "ar": "تسوّق مجموعة شذا",
+        "en": "Shop the signature collection"
+      },
+      "href": "/collections/signatures",
+      "image": "/images/hero-campaign.webp",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "trust",
+      "kind": "trust",
+      "enabled": true,
+      "title": {
+        "ar": "تفاصيل تستحق الاهتمام",
+        "en": "Thoughtful in every detail"
+      },
+      "body": {
+        "ar": "تعرف على اختياراتنا",
+        "en": "Explore our approach"
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "categories",
+      "kind": "categories",
+      "enabled": true,
+      "title": {
+        "ar": "عالمٌ من شذا",
+        "en": "A world of Shadha"
+      },
+      "body": {
+        "ar": "من عطرك اليومي إلى رائحة البيت.",
+        "en": "From your everyday fragrance to the scent of home."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "brands",
+      "kind": "brands",
+      "enabled": true,
+      "title": {
+        "ar": "دور تستحق الاكتشاف",
+        "en": "Houses worth discovering"
+      },
+      "body": {
+        "ar": "اختيارات من الدور المتاحة في المتجر.",
+        "en": "Discover the houses available in the store."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "products",
+      "kind": "products",
+      "enabled": true,
+      "title": {
+        "ar": "اختيارات تترك أثرًا",
+        "en": "Selected to stay with you"
+      },
+      "body": {
+        "ar": "من دفء العنبر إلى نعومة الورد. اختر النفحة الأقرب إليك.",
+        "en": "From amber warmth to soft rose. Find the note that feels like you."
+      },
+      "action": {
+        "ar": "كل العطور",
+        "en": "All fragrances"
+      },
+      "href": "/products",
+      "image": "",
+      "productIds": [
+        "amber-nights",
+        "rose-dawn",
+        "green-hour",
+        "oud-royale"
+      ],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "promotions",
+      "kind": "promotions",
+      "enabled": true,
+      "title": {
+        "ar": "تفاصيل تُكمل التجربة",
+        "en": "Make the experience yours"
+      },
+      "body": {
+        "ar": "اكتشف، اختر، وأهدِ.",
+        "en": "Discover, choose, give."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [
+        {
+          "id": "gift-campaign",
+          "title": {
+            "ar": "هدية تترك أثرًا",
+            "en": "A gift that stays with them"
+          },
+          "body": {
+            "ar": "مجموعات مختارة، تغليف هدية، ورسالة منك.",
+            "en": "Curated sets, gift wrapping and a note from you."
+          },
+          "action": {
+            "ar": "اكتشف الهدايا",
+            "en": "Explore gifts"
+          },
+          "href": "/gifts",
+          "image": "/images/gift.webp",
+          "mobileImage": "",
+          "enabled": true,
+          "startsAt": null,
+          "endsAt": null,
+          "imagePosition": "center",
+          "requirement": "gifts"
+        },
+        {
+          "id": "discovery-campaign",
+          "title": {
+            "ar": "جرّب قبل أن تختار",
+            "en": "Find your signature first"
+          },
+          "body": {
+            "ar": "تعرّف على الروائح مع عينات ومجموعات الاكتشاف.",
+            "en": "Meet the fragrances through samples and discovery sets."
+          },
+          "action": {
+            "ar": "تسوّق مجموعات الاكتشاف",
+            "en": "Shop discovery sets"
+          },
+          "href": "/discovery-sets",
+          "image": "/images/discovery.webp",
+          "mobileImage": "",
+          "enabled": true,
+          "startsAt": null,
+          "endsAt": null,
+          "imagePosition": "center",
+          "requirement": "samples"
+        }
+      ],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "notes",
+      "kind": "notes",
+      "enabled": true,
+      "title": {
+        "ar": "اتبع النفحة\nالتي تحبّها.",
+        "en": "Follow the note\nyou love."
+      },
+      "body": {
+        "ar": "خشبي، زهري، أم دافئ؟ اقترب من المكونات، ودع ذوقك يقودك.",
+        "en": "Woody, floral, or warm? Get to know the ingredients. Let your taste lead."
+      },
+      "action": {
+        "ar": "مكتبة النوتات",
+        "en": "The note library"
+      },
+      "href": "/notes",
+      "image": "/images/oud.webp",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "oud",
+      "kind": "oud",
+      "enabled": true,
+      "title": {
+        "ar": "دفء المكان،\nوحكاية العود.",
+        "en": "The warmth of a room.\nThe story of oud."
+      },
+      "body": {
+        "ar": "رقائق عود، خلطات بخور، ومباخر بتفاصيل هادئة. طقس صغير يعيد للمكان روحه.",
+        "en": "Oud chips, incense blends, and thoughtfully shaped burners. A small ritual that makes a room your own."
+      },
+      "action": {
+        "ar": "اكتشف العود والبخور",
+        "en": "Explore oud & incense"
+      },
+      "href": "/incense",
+      "image": "/images/oud.webp",
+      "productIds": [
+        "oud-chips",
+        "gathering-bakhoor"
+      ],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "occasions",
+      "kind": "occasions",
+      "enabled": true,
+      "title": {
+        "ar": "لكل يوم، إحساس.",
+        "en": "A feeling for every day."
+      },
+      "body": {
+        "ar": "اختر عطرك للحظة التي تنتظرك.",
+        "en": "Choose a fragrance for the moment ahead."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "/images/rose.webp",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "gifts",
+      "kind": "gifts",
+      "enabled": true,
+      "title": {
+        "ar": "تُهدى بذوق.\nوتُذكر بشذا.",
+        "en": "Given with thought.\nRemembered by scent."
+      },
+      "body": {
+        "ar": "هدية تجمع عطرًا تحبه وتفاصيل تقول أكثر. اختر المجموعة وأضف رسالتك.",
+        "en": "A favourite fragrance and details that say a little more. Choose a set and add your message."
+      },
+      "action": {
+        "ar": "اختر هديتك",
+        "en": "Find your gift"
+      },
+      "href": "/gifts",
+      "image": "/images/gift.webp",
+      "productIds": [
+        "house-gift",
+        "scent-discovery"
+      ],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "story",
+      "kind": "story",
+      "enabled": true,
+      "title": {
+        "ar": "قبل أن يصبح عطرًا،\nكان إحساسًا.",
+        "en": "Before it was a fragrance,\nit was a feeling."
+      },
+      "body": {
+        "ar": "كيف تبدأ الحكاية من نفحة، وكيف تختار عطرًا ترتاح له؟ مساحة صغيرة للتعرّف، قبل الاختيار.",
+        "en": "How does a story begin with a note? And how do you find a fragrance that feels right? A little room to discover, before you choose."
+      },
+      "action": {
+        "ar": "اقرأ الحكاية",
+        "en": "Read the story"
+      },
+      "href": "/guides/choose-fragrance",
+      "image": "/images/note-rose.webp",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "reviews",
+      "kind": "reviews",
+      "enabled": true,
+      "title": {
+        "ar": "كلمات من تجربة العطر",
+        "en": "Words from a fragrance experience"
+      },
+      "body": {
+        "ar": "آراء توضيحية لعرض تصميم الثيم، وليست مراجعات شراء حقيقية.",
+        "en": "Illustrative reviews for the theme preview, not real purchase reviews."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "faq",
+      "kind": "faq",
+      "enabled": true,
+      "title": {
+        "ar": "للاختيار بثقة",
+        "en": "A little clarity before you choose"
+      },
+      "body": {
+        "ar": "إجابات قريبة، لتجربة أبسط.",
+        "en": "Helpful answers for an easier experience."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    },
+    {
+      "id": "capture",
+      "kind": "capture",
+      "enabled": true,
+      "title": {
+        "ar": "رسالة تحمل شذا.",
+        "en": "A note from Shadha."
+      },
+      "body": {
+        "ar": "اكتشف المجموعات الجديدة وقصص الروائح في بريدك.",
+        "en": "New collections and fragrance stories, delivered to your inbox."
+      },
+      "action": {
+        "ar": "اكتشف المجموعة",
+        "en": "Explore the collection"
+      },
+      "href": "",
+      "image": "",
+      "productIds": [],
+      "banners": [],
+      "startsAt": null,
+      "endsAt": null,
+      "presentation": {
+        "gap": 32,
+        "imagePosition": "center",
+        "height": 500
+      }
+    }
+  ],
+  "navigation": [
+    {
+      "label": {
+        "ar": "العطور",
+        "en": "Perfumes"
+      },
+      "href": "/perfumes",
+      "children": [
+        {
+          "label": {
+            "ar": "بنفحات العود",
+            "en": "Oud notes"
+          },
+          "href": "/perfumes/oud"
+        },
+        {
+          "label": {
+            "ar": "بنفحات الورد",
+            "en": "Rose notes"
+          },
+          "href": "/perfumes/rose"
+        },
+        {
+          "label": {
+            "ar": "بنفحات العنبر",
+            "en": "Amber notes"
+          },
+          "href": "/perfumes/amber"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "العود والبخور",
+        "en": "Oud & incense"
+      },
+      "href": "/incense",
+      "children": [
+        {
+          "label": {
+            "ar": "رقائق العود",
+            "en": "Oud chips"
+          },
+          "href": "/incense/oud"
+        },
+        {
+          "label": {
+            "ar": "خلطات البخور",
+            "en": "Bakhoor blends"
+          },
+          "href": "/incense/bakhoor"
+        },
+        {
+          "label": {
+            "ar": "معمول البخور",
+            "en": "Incense tablets"
+          },
+          "href": "/incense/maamoul"
+        },
+        {
+          "label": {
+            "ar": "المباخر",
+            "en": "Burners"
+          },
+          "href": "/burners"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "الزيوت العطرية",
+        "en": "Perfume oils"
+      },
+      "href": "/oils",
+      "children": []
+    },
+    {
+      "label": {
+        "ar": "للبيت",
+        "en": "For the home"
+      },
+      "href": "/home-fragrance",
+      "children": []
+    },
+    {
+      "label": {
+        "ar": "الهدايا",
+        "en": "Gifts"
+      },
+      "href": "/gifts",
+      "children": []
+    },
+    {
+      "label": {
+        "ar": "عالم شذا",
+        "en": "Our world"
+      },
+      "href": "/about",
+      "children": []
+    }
+  ],
+  "footer": [
+    {
+      "title": {
+        "ar": "تسوّق شذا",
+        "en": "Shop Shadha"
+      },
+      "links": [
+        {
+          "label": {
+            "ar": "كل المنتجات",
+            "en": "All products"
+          },
+          "href": "/products"
+        },
+        {
+          "label": {
+            "ar": "العطور",
+            "en": "Perfumes"
+          },
+          "href": "/perfumes"
+        },
+        {
+          "label": {
+            "ar": "العود والبخور",
+            "en": "Oud & incense"
+          },
+          "href": "/incense"
+        },
+        {
+          "label": {
+            "ar": "المباخر",
+            "en": "Burners"
+          },
+          "href": "/burners"
+        },
+        {
+          "label": {
+            "ar": "الهدايا",
+            "en": "Gifts"
+          },
+          "href": "/gifts"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ar": "اكتشف عطرك",
+        "en": "Find your fragrance"
+      },
+      "links": [
+        {
+          "label": {
+            "ar": "مكتبة النوتات",
+            "en": "The note library"
+          },
+          "href": "/notes"
+        },
+        {
+          "label": {
+            "ar": "حسب المناسبة",
+            "en": "By occasion"
+          },
+          "href": "/occasions"
+        },
+        {
+          "label": {
+            "ar": "مساعد الاختيار",
+            "en": "Scent finder"
+          },
+          "href": "/scent-finder"
+        },
+        {
+          "label": {
+            "ar": "مجموعات الاكتشاف",
+            "en": "Discovery sets"
+          },
+          "href": "/discovery-sets"
+        },
+        {
+          "label": {
+            "ar": "دليل العطر",
+            "en": "Fragrance journal"
+          },
+          "href": "/guides"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ar": "نحن هنا لمساعدتك",
+        "en": "Here to help"
+      },
+      "links": [
+        {
+          "label": {
+            "ar": "تواصل معنا",
+            "en": "Contact us"
+          },
+          "href": "/contact"
+        },
+        {
+          "label": {
+            "ar": "الشحن والاسترجاع",
+            "en": "Delivery & returns"
+          },
+          "href": "/shipping"
+        },
+        {
+          "label": {
+            "ar": "الأسئلة الشائعة",
+            "en": "Questions & answers"
+          },
+          "href": "/faq"
+        },
+        {
+          "label": {
+            "ar": "سياسة الخصوصية",
+            "en": "Privacy"
+          },
+          "href": "/privacy"
+        },
+        {
+          "label": {
+            "ar": "الشروط والأحكام",
+            "en": "Terms"
+          },
+          "href": "/terms"
+        }
+      ]
+    }
+  ],
+  "features": {
+    "multiBrand": false,
+    "gifts": true,
+    "samples": true,
+    "wishlist": true,
+    "recent": true,
+    "compare": false,
+    "finder": true
+  },
+  "floating": {
+    "backToTop": true,
+    "whatsapp": false,
+    "compare": false,
+    "wishlist": false
+  },
+  "products": [
+    {
+      "id": "amber-nights",
+      "slug": "amber-nights",
+      "name": {
+        "ar": "ليل العنبر",
+        "en": "Amber nights"
+      },
+      "summary": {
+        "ar": "عنبر، عود، زعفران — تكوين متوازن.",
+        "en": "amber, oud, saffron — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "amber",
+        "oud",
+        "saffron"
+      ],
+      "occasions": [
+        "evening",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "saffron-evening"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": "amber-sample",
+      "intensity": "soft",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "saffron"
+        ],
+        "heart": [
+          "oud"
+        ],
+        "base": [
+          "amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-AMBER-NIGHTS-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 285,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة ليل العنبر",
+                "en": "Illustrative collection photography: Amber nights"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: ليل العنبر",
+                "en": "Enlarged detail of the illustrative photograph: Amber nights"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-AMBER-NIGHTS-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 385,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة ليل العنبر",
+                "en": "Illustrative collection photography: Amber nights"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: ليل العنبر",
+                "en": "Enlarged detail of the illustrative photograph: Amber nights"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "rose-dawn",
+      "slug": "rose-dawn",
+      "name": {
+        "ar": "فجر الورد",
+        "en": "Rose dawn"
+      },
+      "summary": {
+        "ar": "ورد، مسك، برغموت — تكوين متوازن.",
+        "en": "rose, musk, bergamot — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "floral",
+      "notes": [
+        "rose",
+        "musk",
+        "bergamot"
+      ],
+      "occasions": [
+        "everyday",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "rose-letter"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": "rose-sample",
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "bergamot"
+        ],
+        "heart": [
+          "musk"
+        ],
+        "base": [
+          "rose"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-ROSE-DAWN-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 245,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة فجر الورد",
+                "en": "Illustrative collection photography: Rose dawn"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: فجر الورد",
+                "en": "Enlarged detail of the illustrative photograph: Rose dawn"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-ROSE-DAWN-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 345,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة فجر الورد",
+                "en": "Illustrative collection photography: Rose dawn"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: فجر الورد",
+                "en": "Enlarged detail of the illustrative photograph: Rose dawn"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "green-hour",
+      "slug": "green-hour",
+      "name": {
+        "ar": "ساعة خضراء",
+        "en": "The green hour"
+      },
+      "summary": {
+        "ar": "برغموت، أرز، مسك — تكوين متوازن.",
+        "en": "bergamot, cedar, musk — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "fresh",
+      "notes": [
+        "bergamot",
+        "cedar",
+        "musk"
+      ],
+      "occasions": [
+        "evening",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "cedar-path"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "rich",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "musk"
+        ],
+        "heart": [
+          "cedar"
+        ],
+        "base": [
+          "bergamot"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-GREEN-HOUR-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 225,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة ساعة خضراء",
+                "en": "Illustrative collection photography: The green hour"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: ساعة خضراء",
+                "en": "Enlarged detail of the illustrative photograph: The green hour"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-GREEN-HOUR-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 325,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة ساعة خضراء",
+                "en": "Illustrative collection photography: The green hour"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: ساعة خضراء",
+                "en": "Enlarged detail of the illustrative photograph: The green hour"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "oud-royale",
+      "slug": "oud-royale",
+      "name": {
+        "ar": "عود رويال",
+        "en": "Oud royale"
+      },
+      "summary": {
+        "ar": "عود، زعفران، عنبر — تكوين متوازن.",
+        "en": "oud, saffron, amber — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [
+        "oud",
+        "saffron",
+        "amber"
+      ],
+      "occasions": [
+        "everyday",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "amber-nights"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "soft",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "amber"
+        ],
+        "heart": [
+          "saffron"
+        ],
+        "base": [
+          "oud"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-OUD-ROYALE-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 345,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة عود رويال",
+                "en": "Illustrative collection photography: Oud royale"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: عود رويال",
+                "en": "Enlarged detail of the illustrative photograph: Oud royale"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-OUD-ROYALE-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 445,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة عود رويال",
+                "en": "Illustrative collection photography: Oud royale"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: عود رويال",
+                "en": "Enlarged detail of the illustrative photograph: Oud royale"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "soft-musk",
+      "slug": "soft-musk",
+      "name": {
+        "ar": "همس المسك",
+        "en": "Musk whisper"
+      },
+      "summary": {
+        "ar": "مسك، ورد، فانيليا — تكوين متوازن.",
+        "en": "musk, rose, vanilla — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "musk",
+      "notes": [
+        "musk",
+        "rose",
+        "vanilla"
+      ],
+      "occasions": [
+        "evening",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "rose-dawn"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "vanilla"
+        ],
+        "heart": [
+          "rose"
+        ],
+        "base": [
+          "musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-SOFT-MUSK-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 195,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة همس المسك",
+                "en": "Illustrative collection photography: Musk whisper"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: همس المسك",
+                "en": "Enlarged detail of the illustrative photograph: Musk whisper"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-SOFT-MUSK-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 295,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة همس المسك",
+                "en": "Illustrative collection photography: Musk whisper"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: همس المسك",
+                "en": "Enlarged detail of the illustrative photograph: Musk whisper"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "cedar-path",
+      "slug": "cedar-path",
+      "name": {
+        "ar": "درب الأرز",
+        "en": "Cedar path"
+      },
+      "summary": {
+        "ar": "أرز، برغموت، عود — تكوين متوازن.",
+        "en": "cedar, bergamot, oud — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [
+        "cedar",
+        "bergamot",
+        "oud"
+      ],
+      "occasions": [
+        "everyday",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "oud-royale"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "rich",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "oud"
+        ],
+        "heart": [
+          "bergamot"
+        ],
+        "base": [
+          "cedar"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-CEDAR-PATH-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 265,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 0,
+          "media": [
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة درب الأرز",
+                "en": "Illustrative collection photography: Cedar path"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: درب الأرز",
+                "en": "Enlarged detail of the illustrative photograph: Cedar path"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-CEDAR-PATH-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 365,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة درب الأرز",
+                "en": "Illustrative collection photography: Cedar path"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: درب الأرز",
+                "en": "Enlarged detail of the illustrative photograph: Cedar path"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "saffron-evening",
+      "slug": "saffron-evening",
+      "name": {
+        "ar": "مساء الزعفران",
+        "en": "Saffron evening"
+      },
+      "summary": {
+        "ar": "زعفران، عنبر، فانيليا — تكوين متوازن.",
+        "en": "saffron, amber, vanilla — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "saffron",
+        "amber",
+        "vanilla"
+      ],
+      "occasions": [
+        "evening",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "amber-nights"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "soft",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "vanilla"
+        ],
+        "heart": [
+          "amber"
+        ],
+        "base": [
+          "saffron"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-SAFFRON-EVENING-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 295,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة مساء الزعفران",
+                "en": "Illustrative collection photography: Saffron evening"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: مساء الزعفران",
+                "en": "Enlarged detail of the illustrative photograph: Saffron evening"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-SAFFRON-EVENING-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 395,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة مساء الزعفران",
+                "en": "Illustrative collection photography: Saffron evening"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/amber.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: مساء الزعفران",
+                "en": "Enlarged detail of the illustrative photograph: Saffron evening"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "rose-letter",
+      "slug": "rose-letter",
+      "name": {
+        "ar": "رسالة ورد",
+        "en": "A rose letter"
+      },
+      "summary": {
+        "ar": "ورد، فانيليا، مسك — تكوين متوازن.",
+        "en": "rose, vanilla, musk — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "floral",
+      "notes": [
+        "rose",
+        "vanilla",
+        "musk"
+      ],
+      "occasions": [
+        "everyday",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "soft-musk"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "musk"
+        ],
+        "heart": [
+          "vanilla"
+        ],
+        "base": [
+          "rose"
+        ]
+      },
+      "variants": [
+        {
+          "id": "50",
+          "sku": "SH-ROSE-LETTER-50",
+          "label": {
+            "ar": "٥٠ مل · أو دو بارفان",
+            "en": "50 ml · Eau de parfum"
+          },
+          "price": 235,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة رسالة ورد",
+                "en": "Illustrative collection photography: A rose letter"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: رسالة ورد",
+                "en": "Enlarged detail of the illustrative photograph: A rose letter"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 50,
+          "concentration": "EDP"
+        },
+        {
+          "id": "100",
+          "sku": "SH-ROSE-LETTER-100",
+          "label": {
+            "ar": "١٠٠ مل · أو دو بارفان",
+            "en": "100 ml · Eau de parfum"
+          },
+          "price": 335,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 8,
+          "media": [
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة رسالة ورد",
+                "en": "Illustrative collection photography: A rose letter"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/rose.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: رسالة ورد",
+                "en": "Enlarged detail of the illustrative photograph: A rose letter"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "oud-oil",
+      "slug": "oud-oil",
+      "name": {
+        "ar": "دهن الدار",
+        "en": "House oud oil"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [
+        "oud"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "oil",
+      "oilType": "dehn-oud",
+      "origin": null,
+      "applicator": {
+        "ar": "عود زجاجي للتطبيق",
+        "en": "Glass applicator"
+      },
+      "variants": [
+        {
+          "id": "6",
+          "sku": "SH-OUD-OIL-6",
+          "label": {
+            "ar": "٦ مل",
+            "en": "6 ml"
+          },
+          "price": 125,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة دهن الدار",
+                "en": "Illustrative collection photography: House oud oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: دهن الدار",
+                "en": "Enlarged detail of the illustrative photograph: House oud oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 6
+        },
+        {
+          "id": "12",
+          "sku": "SH-OUD-OIL-12",
+          "label": {
+            "ar": "١٢ مل",
+            "en": "12 ml"
+          },
+          "price": 215,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة دهن الدار",
+                "en": "Illustrative collection photography: House oud oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: دهن الدار",
+                "en": "Enlarged detail of the illustrative photograph: House oud oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 12
+        }
+      ]
+    },
+    {
+      "id": "musk-oil",
+      "slug": "musk-oil",
+      "name": {
+        "ar": "مسك ناعم",
+        "en": "Soft musk oil"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "musk",
+      "notes": [
+        "musk"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "oil",
+      "oilType": "musk",
+      "origin": null,
+      "applicator": {
+        "ar": "عود زجاجي للتطبيق",
+        "en": "Glass applicator"
+      },
+      "variants": [
+        {
+          "id": "6",
+          "sku": "SH-MUSK-OIL-6",
+          "label": {
+            "ar": "٦ مل",
+            "en": "6 ml"
+          },
+          "price": 160,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة مسك ناعم",
+                "en": "Illustrative collection photography: Soft musk oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: مسك ناعم",
+                "en": "Enlarged detail of the illustrative photograph: Soft musk oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 6
+        },
+        {
+          "id": "12",
+          "sku": "SH-MUSK-OIL-12",
+          "label": {
+            "ar": "١٢ مل",
+            "en": "12 ml"
+          },
+          "price": 250,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة مسك ناعم",
+                "en": "Illustrative collection photography: Soft musk oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: مسك ناعم",
+                "en": "Enlarged detail of the illustrative photograph: Soft musk oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 12
+        }
+      ]
+    },
+    {
+      "id": "rose-oil",
+      "slug": "rose-oil",
+      "name": {
+        "ar": "زيت الورد",
+        "en": "Rose oil"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "floral",
+      "notes": [
+        "rose"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "oil",
+      "oilType": "perfume-oil",
+      "origin": null,
+      "applicator": {
+        "ar": "عود زجاجي للتطبيق",
+        "en": "Glass applicator"
+      },
+      "variants": [
+        {
+          "id": "6",
+          "sku": "SH-ROSE-OIL-6",
+          "label": {
+            "ar": "٦ مل",
+            "en": "6 ml"
+          },
+          "price": 195,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة زيت الورد",
+                "en": "Illustrative collection photography: Rose oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: زيت الورد",
+                "en": "Enlarged detail of the illustrative photograph: Rose oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 6
+        },
+        {
+          "id": "12",
+          "sku": "SH-ROSE-OIL-12",
+          "label": {
+            "ar": "١٢ مل",
+            "en": "12 ml"
+          },
+          "price": 285,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة زيت الورد",
+                "en": "Illustrative collection photography: Rose oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oil.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: زيت الورد",
+                "en": "Enlarged detail of the illustrative photograph: Rose oil"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 12
+        }
+      ]
+    },
+    {
+      "id": "oud-chips",
+      "slug": "oud-chips",
+      "name": {
+        "ar": "رقائق العود",
+        "en": "Oud chips"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [
+        "oud"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم كمية صغيرة في مبخرة مناسبة. لا تترك الحرارة دون مراقبة.",
+        "en": "Use a small amount in a suitable burner. Never leave heat unattended."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "oud",
+      "origin": null,
+      "grade": null,
+      "heatingMethod": {
+        "ar": "مبخرة مناسبة مع تهوية جيدة",
+        "en": "Suitable incense burner with good ventilation"
+      },
+      "variants": [
+        {
+          "id": "25",
+          "sku": "SH-OUD-CHIPS-25",
+          "label": {
+            "ar": "٢٥ غ",
+            "en": "25 g"
+          },
+          "price": 155,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة رقائق العود",
+                "en": "Illustrative collection photography: Oud chips"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: رقائق العود",
+                "en": "Enlarged detail of the illustrative photograph: Oud chips"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 25
+        },
+        {
+          "id": "50",
+          "sku": "SH-OUD-CHIPS-50",
+          "label": {
+            "ar": "٥٠ غ",
+            "en": "50 g"
+          },
+          "price": 280,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة رقائق العود",
+                "en": "Illustrative collection photography: Oud chips"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: رقائق العود",
+                "en": "Enlarged detail of the illustrative photograph: Oud chips"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 50
+        }
+      ]
+    },
+    {
+      "id": "oud-selection",
+      "slug": "oud-selection",
+      "name": {
+        "ar": "اختيار العود",
+        "en": "Oud selection"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [
+        "oud"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم كمية صغيرة في مبخرة مناسبة. لا تترك الحرارة دون مراقبة.",
+        "en": "Use a small amount in a suitable burner. Never leave heat unattended."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "oud",
+      "origin": null,
+      "grade": null,
+      "heatingMethod": {
+        "ar": "مبخرة مناسبة مع تهوية جيدة",
+        "en": "Suitable incense burner with good ventilation"
+      },
+      "variants": [
+        {
+          "id": "25",
+          "sku": "SH-OUD-SELECTION-25",
+          "label": {
+            "ar": "٢٥ غ",
+            "en": "25 g"
+          },
+          "price": 245,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة اختيار العود",
+                "en": "Illustrative collection photography: Oud selection"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: اختيار العود",
+                "en": "Enlarged detail of the illustrative photograph: Oud selection"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 25
+        },
+        {
+          "id": "50",
+          "sku": "SH-OUD-SELECTION-50",
+          "label": {
+            "ar": "٥٠ غ",
+            "en": "50 g"
+          },
+          "price": 370,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة اختيار العود",
+                "en": "Illustrative collection photography: Oud selection"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/oud.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: اختيار العود",
+                "en": "Enlarged detail of the illustrative photograph: Oud selection"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 50
+        }
+      ]
+    },
+    {
+      "id": "gathering-bakhoor",
+      "slug": "gathering-bakhoor",
+      "name": {
+        "ar": "بخور المجلس",
+        "en": "Gathering bakhoor"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "oud",
+        "amber"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "bakhoor",
+      "blend": {
+        "ar": "خلطة خشبية دافئة",
+        "en": "Warm wood blend"
+      },
+      "baseMaterial": {
+        "ar": "رقائق خشبية معطرة",
+        "en": "Scented wood flakes"
+      },
+      "heatingMethod": {
+        "ar": "مبخرة بخور مع تهوية",
+        "en": "Incense burner in a ventilated space"
+      },
+      "variants": [
+        {
+          "id": "40",
+          "sku": "SH-GATHERING-BAKHOOR-40",
+          "label": {
+            "ar": "٤٠ غ",
+            "en": "40 g"
+          },
+          "price": 95,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة بخور المجلس",
+                "en": "Illustrative collection photography: Gathering bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: بخور المجلس",
+                "en": "Enlarged detail of the illustrative photograph: Gathering bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 40
+        },
+        {
+          "id": "80",
+          "sku": "SH-GATHERING-BAKHOOR-80",
+          "label": {
+            "ar": "٨٠ غ",
+            "en": "80 g"
+          },
+          "price": 170,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة بخور المجلس",
+                "en": "Illustrative collection photography: Gathering bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: بخور المجلس",
+                "en": "Enlarged detail of the illustrative photograph: Gathering bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 80
+        }
+      ]
+    },
+    {
+      "id": "amber-bakhoor",
+      "slug": "amber-bakhoor",
+      "name": {
+        "ar": "بخور العنبر",
+        "en": "Amber bakhoor"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "oud",
+        "amber"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "bakhoor",
+      "blend": {
+        "ar": "خلطة عنبر وخشب",
+        "en": "Amber and wood blend"
+      },
+      "baseMaterial": {
+        "ar": "رقائق خشبية معطرة",
+        "en": "Scented wood flakes"
+      },
+      "heatingMethod": {
+        "ar": "مبخرة بخور مع تهوية",
+        "en": "Incense burner in a ventilated space"
+      },
+      "variants": [
+        {
+          "id": "40",
+          "sku": "SH-AMBER-BAKHOOR-40",
+          "label": {
+            "ar": "٤٠ غ",
+            "en": "40 g"
+          },
+          "price": 115,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة بخور العنبر",
+                "en": "Illustrative collection photography: Amber bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: بخور العنبر",
+                "en": "Enlarged detail of the illustrative photograph: Amber bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 40
+        },
+        {
+          "id": "80",
+          "sku": "SH-AMBER-BAKHOOR-80",
+          "label": {
+            "ar": "٨٠ غ",
+            "en": "80 g"
+          },
+          "price": 195,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة بخور العنبر",
+                "en": "Illustrative collection photography: Amber bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/bakhoor.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: بخور العنبر",
+                "en": "Enlarged detail of the illustrative photograph: Amber bakhoor"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 80
+        }
+      ]
+    },
+    {
+      "id": "evening-maamoul",
+      "slug": "evening-maamoul",
+      "name": {
+        "ar": "معمول المساء",
+        "en": "Evening maamoul"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "amber",
+        "musk"
+      ],
+      "occasions": [
+        "everyday",
+        "evening"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "maamoul",
+      "blend": {
+        "ar": "تركيبة خشبية مضغوطة",
+        "en": "Pressed wood blend"
+      },
+      "heatingMethod": {
+        "ar": "حرارة مبخرة معتدلة وتهوية",
+        "en": "Moderate incense heat and ventilation"
+      },
+      "variants": [
+        {
+          "id": "8",
+          "sku": "SH-EVENING-MAAMOUL-8",
+          "label": {
+            "ar": "٨ قطع · ٤٠ غ",
+            "en": "8 pieces · 40 g"
+          },
+          "price": 115,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/maamoul.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة معمول المساء",
+                "en": "Illustrative collection photography: Evening maamoul"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/maamoul.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: معمول المساء",
+                "en": "Enlarged detail of the illustrative photograph: Evening maamoul"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "weightG": 40,
+          "pieces": 8
+        }
+      ]
+    },
+    {
+      "id": "house-diffuser",
+      "slug": "house-diffuser",
+      "name": {
+        "ar": "شذا البيت",
+        "en": "The house diffuser"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "fresh",
+      "notes": [
+        "cedar",
+        "bergamot"
+      ],
+      "occasions": [
+        "home"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "diffuser",
+      "reedCount": 6,
+      "refillIds": [],
+      "variants": [
+        {
+          "id": "150",
+          "sku": "SH-HOUSE-DIFFUSER-150",
+          "label": {
+            "ar": "١٥٠ مل",
+            "en": "150 ml"
+          },
+          "price": 165,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/home.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة شذا البيت",
+                "en": "Illustrative collection photography: The house diffuser"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/home.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: شذا البيت",
+                "en": "Enlarged detail of the illustrative photograph: The house diffuser"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 150
+        }
+      ]
+    },
+    {
+      "id": "house-mist",
+      "slug": "house-mist",
+      "name": {
+        "ar": "رذاذ الدار",
+        "en": "House mist"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "fresh",
+      "notes": [
+        "bergamot",
+        "musk"
+      ],
+      "occasions": [
+        "home"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "home-spray",
+      "suitableSurfaces": {
+        "ar": "هواء الغرفة؛ لا يرش على البشرة أو الأقمشة دون اختبار",
+        "en": "Room air; not for skin. Test before use on fabrics."
+      },
+      "variants": [
+        {
+          "id": "100",
+          "sku": "SH-HOUSE-MIST-100",
+          "label": {
+            "ar": "١٠٠ مل",
+            "en": "100 ml"
+          },
+          "price": 95,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة رذاذ الدار",
+                "en": "Illustrative collection photography: House mist"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/green.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: رذاذ الدار",
+                "en": "Enlarged detail of the illustrative photograph: House mist"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 100
+        }
+      ]
+    },
+    {
+      "id": "stone-burner",
+      "slug": "stone-burner",
+      "name": {
+        "ar": "مبخرة الحجر",
+        "en": "Stone burner"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [],
+      "occasions": [
+        "home",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "ضعها على سطح مقاوم للحرارة. لا تلمس الوعاء أثناء الاستخدام.",
+        "en": "Place on a heat-resistant surface. Do not touch the insert during use."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "burner",
+      "material": {
+        "ar": "حجر مع وعاء معدني",
+        "en": "Stone with a metal insert"
+      },
+      "heatSource": "charcoal",
+      "voltage": null,
+      "powerW": null,
+      "variants": [
+        {
+          "id": "stone",
+          "sku": "SH-STONE-BURNER-STONE",
+          "label": {
+            "ar": "حجر طبيعي",
+            "en": "Natural stone"
+          },
+          "price": 185,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/burner.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة مبخرة الحجر",
+                "en": "Illustrative collection photography: Stone burner"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/burner.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: مبخرة الحجر",
+                "en": "Enlarged detail of the illustrative photograph: Stone burner"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "widthCm": 10,
+          "depthCm": 10,
+          "heightCm": 9,
+          "finish": {
+            "ar": "حجري مطفي",
+            "en": "Matte stone"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ritual-burner",
+      "slug": "ritual-burner",
+      "name": {
+        "ar": "مبخرة الطقس",
+        "en": "Ritual burner"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "woody",
+      "notes": [],
+      "occasions": [
+        "home",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "ضعها على سطح مقاوم للحرارة. لا تلمس الوعاء أثناء الاستخدام.",
+        "en": "Place on a heat-resistant surface. Do not touch the insert during use."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "burner",
+      "material": {
+        "ar": "حجر مع وعاء معدني",
+        "en": "Stone with a metal insert"
+      },
+      "heatSource": "charcoal",
+      "voltage": null,
+      "powerW": null,
+      "variants": [
+        {
+          "id": "stone",
+          "sku": "SH-RITUAL-BURNER-STONE",
+          "label": {
+            "ar": "حجر طبيعي",
+            "en": "Natural stone"
+          },
+          "price": 225,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/burner.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة مبخرة الطقس",
+                "en": "Illustrative collection photography: Ritual burner"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/burner.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: مبخرة الطقس",
+                "en": "Enlarged detail of the illustrative photograph: Ritual burner"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "widthCm": 12,
+          "depthCm": 12,
+          "heightCm": 11,
+          "finish": {
+            "ar": "حجري مطفي",
+            "en": "Matte stone"
+          }
+        }
+      ]
+    },
+    {
+      "id": "amber-sample",
+      "slug": "amber-sample",
+      "name": {
+        "ar": "عينة ليل العنبر",
+        "en": "Amber nights sample"
+      },
+      "summary": {
+        "ar": "عنبر، عود، زعفران — تكوين متوازن.",
+        "en": "amber, oud, saffron — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "amber",
+        "oud",
+        "saffron"
+      ],
+      "occasions": [
+        "evening",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "saffron-evening"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": false,
+      "sampleId": null,
+      "intensity": "soft",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "saffron"
+        ],
+        "heart": [
+          "oud"
+        ],
+        "base": [
+          "amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "2",
+          "sku": "SH-AMBER-SAMPLE-2",
+          "label": {
+            "ar": "عينة ٢ مل",
+            "en": "2 ml sample"
+          },
+          "price": 25,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 20,
+          "media": [
+            {
+              "src": "/images/discovery.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة ليل العنبر",
+                "en": "Illustrative collection photography: Amber nights"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/discovery.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: ليل العنبر",
+                "en": "Enlarged detail of the illustrative photograph: Amber nights"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 2,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "rose-sample",
+      "slug": "rose-sample",
+      "name": {
+        "ar": "عينة فجر الورد",
+        "en": "Rose dawn sample"
+      },
+      "summary": {
+        "ar": "ورد، مسك، برغموت — تكوين متوازن.",
+        "en": "rose, musk, bergamot — a balanced composition."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "floral",
+      "notes": [
+        "rose",
+        "musk",
+        "bergamot"
+      ],
+      "occasions": [
+        "everyday",
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [
+        "rose-letter"
+      ],
+      "complements": [
+        "gathering-bakhoor"
+      ],
+      "giftEligible": false,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "perfume",
+      "audience": "unisex",
+      "pyramid": {
+        "top": [
+          "bergamot"
+        ],
+        "heart": [
+          "musk"
+        ],
+        "base": [
+          "rose"
+        ]
+      },
+      "variants": [
+        {
+          "id": "2",
+          "sku": "SH-ROSE-SAMPLE-2",
+          "label": {
+            "ar": "عينة ٢ مل",
+            "en": "2 ml sample"
+          },
+          "price": 25,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 20,
+          "media": [
+            {
+              "src": "/images/discovery.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة فجر الورد",
+                "en": "Illustrative collection photography: Rose dawn"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/discovery.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: فجر الورد",
+                "en": "Enlarged detail of the illustrative photograph: Rose dawn"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ],
+          "volumeMl": 2,
+          "concentration": "EDP"
+        }
+      ]
+    },
+    {
+      "id": "house-gift",
+      "slug": "house-gift",
+      "name": {
+        "ar": "هدية الدار",
+        "en": "The house gift"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "amber",
+        "rose"
+      ],
+      "occasions": [
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "gift-set",
+      "contents": [
+        {
+          "productId": "amber-nights",
+          "variantId": "50",
+          "quantity": 1
+        },
+        {
+          "productId": "musk-oil",
+          "variantId": "6",
+          "quantity": 1
+        },
+        {
+          "productId": "gathering-bakhoor",
+          "variantId": "40",
+          "quantity": 1
+        }
+      ],
+      "packaging": {
+        "ar": "علبة شذا التوضيحية؛ المحتويات المحددة أدناه هي المرجع",
+        "en": "Illustrative Shadha packaging; the listed contents below are authoritative"
+      },
+      "variants": [
+        {
+          "id": "set",
+          "sku": "SH-HOUSE-GIFT-SET",
+          "label": {
+            "ar": "المجموعة الكاملة",
+            "en": "Complete set"
+          },
+          "price": 420,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/gift.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة هدية الدار",
+                "en": "Illustrative collection photography: The house gift"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/gift.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: هدية الدار",
+                "en": "Enlarged detail of the illustrative photograph: The house gift"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scent-discovery",
+      "slug": "scent-discovery",
+      "name": {
+        "ar": "بداية الحكاية",
+        "en": "A first discovery"
+      },
+      "summary": {
+        "ar": "تفاصيل قليلة. أثر يبقى.",
+        "en": "Quiet details. A lasting impression."
+      },
+      "description": {
+        "ar": "تكوين عطري من مجموعة شذا التوضيحية. اقرأ تفاصيل النوتات والحجم لتختار ما يلائم ذوقك. الصور تعبّر عن تصميم المجموعة ولا تمثّل تصويرًا تجاريًا لمنتج حقيقي.",
+        "en": "A fragrance composition from the illustrative Shadha collection. Explore its notes and size to find your preference. Images show the collection packaging concept, not photography of real merchant inventory."
+      },
+      "brand": "shadha",
+      "published": true,
+      "sample": true,
+      "family": "amber",
+      "notes": [
+        "amber",
+        "rose"
+      ],
+      "occasions": [
+        "gifting"
+      ],
+      "createdAt": "2026-09-20",
+      "usage": {
+        "ar": "استخدم وفق تعليمات العبوة. جرّب كمية صغيرة أولًا.",
+        "en": "Follow the packaging instructions. Try a small amount first."
+      },
+      "care": {
+        "ar": "يحفظ بعيدًا عن الحرارة وأشعة الشمس ومتناول الأطفال.",
+        "en": "Keep away from heat, sunlight and children."
+      },
+      "alternatives": [],
+      "complements": [],
+      "giftEligible": true,
+      "sampleId": null,
+      "intensity": "balanced",
+      "performanceNote": null,
+      "kind": "discovery-set",
+      "contents": [
+        {
+          "productId": "amber-sample",
+          "variantId": "2",
+          "quantity": 1
+        },
+        {
+          "productId": "rose-sample",
+          "variantId": "2",
+          "quantity": 1
+        }
+      ],
+      "packaging": {
+        "ar": "علبة شذا التوضيحية؛ المحتويات المحددة أدناه هي المرجع",
+        "en": "Illustrative Shadha packaging; the listed contents below are authoritative"
+      },
+      "variants": [
+        {
+          "id": "set",
+          "sku": "SH-SCENT-DISCOVERY-SET",
+          "label": {
+            "ar": "المجموعة الكاملة",
+            "en": "Complete set"
+          },
+          "price": 45,
+          "compareAt": null,
+          "offerStartsAt": null,
+          "offerEndsAt": null,
+          "stock": 12,
+          "media": [
+            {
+              "src": "/images/discovery.webp",
+              "alt": {
+                "ar": "تصوير توضيحي لمجموعة بداية الحكاية",
+                "en": "Illustrative collection photography: A first discovery"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "full"
+            },
+            {
+              "src": "/images/discovery.webp",
+              "alt": {
+                "ar": "تفصيل مكبّر من الصورة التوضيحية: بداية الحكاية",
+                "en": "Enlarged detail of the illustrative photograph: A first discovery"
+              },
+              "illustrative": true,
+              "fallbackSrc": null,
+              "fallbackAlt": null,
+              "view": "detail"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "perfumes",
+      "name": {
+        "ar": "العطور",
+        "en": "Perfumes"
+      },
+      "description": {
+        "ar": "نفحات تصاحب حضورك",
+        "en": "Fragrances for your presence"
+      },
+      "image": "/images/amber.webp",
+      "published": true,
+      "kinds": [
+        "perfume"
+      ],
+      "span": 2
+    },
+    {
+      "id": "incense",
+      "name": {
+        "ar": "العود والبخور",
+        "en": "Oud & incense"
+      },
+      "description": {
+        "ar": "دفء، وطقس يتجدد",
+        "en": "Warmth and a daily ritual"
+      },
+      "image": "/images/oud.webp",
+      "published": true,
+      "kinds": [
+        "oud",
+        "bakhoor",
+        "maamoul"
+      ],
+      "span": 1
+    },
+    {
+      "id": "oils",
+      "name": {
+        "ar": "الزيوت العطرية",
+        "en": "Perfume oils"
+      },
+      "description": {
+        "ar": "لمسة قريبة منك",
+        "en": "A personal finishing touch"
+      },
+      "image": "/images/oil.webp",
+      "published": true,
+      "kinds": [
+        "oil"
+      ],
+      "span": 1
+    },
+    {
+      "id": "home-fragrance",
+      "name": {
+        "ar": "للبيت",
+        "en": "For the home"
+      },
+      "description": {
+        "ar": "رائحة تستقبلك",
+        "en": "A scent to come home to"
+      },
+      "image": "/images/home.webp",
+      "published": true,
+      "kinds": [
+        "diffuser",
+        "home-spray"
+      ],
+      "span": 1
+    },
+    {
+      "id": "burners",
+      "name": {
+        "ar": "المباخر",
+        "en": "Burners"
+      },
+      "description": {
+        "ar": "جمال في التفاصيل",
+        "en": "Beauty in the details"
+      },
+      "image": "/images/burner.webp",
+      "published": true,
+      "kinds": [
+        "burner"
+      ],
+      "span": 1
+    }
+  ],
+  "notes": [
+    {
+      "id": "oud",
+      "name": {
+        "ar": "العود",
+        "en": "Oud"
+      },
+      "description": {
+        "ar": "خشب دافئ، بطابع عميق ومطمئن.",
+        "en": "Warm woods with a deep, reassuring character."
+      },
+      "image": "/images/note-oud.webp",
+      "published": true
+    },
+    {
+      "id": "rose",
+      "name": {
+        "ar": "الورد",
+        "en": "Rose"
+      },
+      "description": {
+        "ar": "نفحات زهرية رقيقة تفتح التكوين.",
+        "en": "Delicate floral notes that open the composition."
+      },
+      "image": "/images/note-rose.webp",
+      "published": true
+    },
+    {
+      "id": "amber",
+      "name": {
+        "ar": "العنبر",
+        "en": "Amber"
+      },
+      "description": {
+        "ar": "دفء ناعم يجمع الخشب والحلاوة.",
+        "en": "A soft warmth between woods and sweetness."
+      },
+      "image": "/images/note-amber.webp",
+      "published": true
+    },
+    {
+      "id": "musk",
+      "name": {
+        "ar": "المسك",
+        "en": "Musk"
+      },
+      "description": {
+        "ar": "ملمس عطري هادئ وقريب.",
+        "en": "A quiet, close-to-skin fragrance texture."
+      },
+      "image": "/images/note-musk.webp",
+      "published": true
+    },
+    {
+      "id": "bergamot",
+      "name": {
+        "ar": "البرغموت",
+        "en": "Bergamot"
+      },
+      "description": {
+        "ar": "بداية حمضية مضيئة وخضراء.",
+        "en": "A bright, green citrus opening."
+      },
+      "image": "/images/note-bergamot.webp",
+      "published": true
+    },
+    {
+      "id": "cedar",
+      "name": {
+        "ar": "الأرز",
+        "en": "Cedar"
+      },
+      "description": {
+        "ar": "طابع خشبي جاف ونظيف.",
+        "en": "A dry, clean woody character."
+      },
+      "image": "/images/note-cedar.webp",
+      "published": true
+    },
+    {
+      "id": "saffron",
+      "name": {
+        "ar": "الزعفران",
+        "en": "Saffron"
+      },
+      "description": {
+        "ar": "لمسة توابل دافئة في القلب.",
+        "en": "A warm spice accent at the heart."
+      },
+      "image": "/images/note-saffron.webp",
+      "published": true
+    },
+    {
+      "id": "vanilla",
+      "name": {
+        "ar": "الفانيليا",
+        "en": "Vanilla"
+      },
+      "description": {
+        "ar": "حلاوة مستديرة لتوازن القاعدة.",
+        "en": "Rounded sweetness to balance the base."
+      },
+      "image": "/images/note-vanilla.webp",
+      "published": true
+    }
+  ],
+  "families": [
+    {
+      "id": "woody",
+      "name": {
+        "ar": "خشبي",
+        "en": "Woody"
+      },
+      "description": {
+        "ar": "دفء الأخشاب وتفاصيلها",
+        "en": "The warmth and texture of wood"
+      },
+      "image": "/images/oud.webp",
+      "published": true
+    },
+    {
+      "id": "floral",
+      "name": {
+        "ar": "زهري",
+        "en": "Floral"
+      },
+      "description": {
+        "ar": "ورد ونفحات ناعمة",
+        "en": "Rose and softer notes"
+      },
+      "image": "/images/rose.webp",
+      "published": true
+    },
+    {
+      "id": "amber",
+      "name": {
+        "ar": "عنبري",
+        "en": "Amber"
+      },
+      "description": {
+        "ar": "تكوين دافئ ومستدير",
+        "en": "Warm, rounded compositions"
+      },
+      "image": "/images/amber.webp",
+      "published": true
+    },
+    {
+      "id": "musk",
+      "name": {
+        "ar": "مسكي",
+        "en": "Musk"
+      },
+      "description": {
+        "ar": "هدوء وقرب",
+        "en": "Quiet and intimate"
+      },
+      "image": "/images/oil.webp",
+      "published": true
+    },
+    {
+      "id": "fresh",
+      "name": {
+        "ar": "منعش",
+        "en": "Fresh"
+      },
+      "description": {
+        "ar": "حمضيات وخضرة",
+        "en": "Citrus and green notes"
+      },
+      "image": "/images/green.webp",
+      "published": true
+    }
+  ],
+  "occasions": [
+    {
+      "id": "everyday",
+      "name": {
+        "ar": "لتفاصيل يومك",
+        "en": "For your everyday"
+      },
+      "description": {
+        "ar": "نفحات سهلة تصاحب يومك.",
+        "en": "Easy-going notes for the everyday."
+      },
+      "image": "/images/green.webp",
+      "published": true
+    },
+    {
+      "id": "evening",
+      "name": {
+        "ar": "لمساء مختلف",
+        "en": "For a different evening"
+      },
+      "description": {
+        "ar": "تكوين أعمق، للحظات الخاصة.",
+        "en": "A deeper composition for special moments."
+      },
+      "image": "/images/amber.webp",
+      "published": true
+    },
+    {
+      "id": "gifting",
+      "name": {
+        "ar": "لمن تحب",
+        "en": "For someone you love"
+      },
+      "description": {
+        "ar": "اختيارات تعبّر عن اهتمامك.",
+        "en": "Thoughtful choices for someone special."
+      },
+      "image": "/images/gift.webp",
+      "published": true
+    },
+    {
+      "id": "home",
+      "name": {
+        "ar": "للبيت",
+        "en": "For your home"
+      },
+      "description": {
+        "ar": "دفء تستقبله كل يوم.",
+        "en": "A warm welcome, every day."
+      },
+      "image": "/images/home.webp",
+      "published": true
+    }
+  ],
+  "brands": [
+    {
+      "id": "shadha",
+      "name": {
+        "ar": "شذا",
+        "en": "Shadha"
+      },
+      "description": {
+        "ar": "مجموعة شذا التوضيحية",
+        "en": "The illustrative Shadha collection"
+      },
+      "image": "/images/hero.webp",
+      "published": true
+    }
+  ],
+  "guides": [
+    {
+      "id": "choose-fragrance",
+      "name": {
+        "ar": "كيف تختار عطرك؟",
+        "en": "How to choose your fragrance"
+      },
+      "description": {
+        "ar": "ابدأ بالنفحات التي ترتاح لها.",
+        "en": "Begin with the notes you enjoy."
+      },
+      "image": "/images/hero.webp",
+      "published": true,
+      "paragraphs": [
+        {
+          "ar": "تعرّف على العائلة العطرية أولًا. الروائح الخشبية والزهرية والمنعشة تعطي نقطة بداية، وليست قواعد ثابتة لذوقك.",
+          "en": "Get to know the fragrance family first. Woody, floral and fresh descriptions are starting points, not rules for your taste."
+        },
+        {
+          "ar": "قارن الأحجام والتركيز والسعر. إذا كانت العينة متاحة، جرّبها قبل اختيار العبوة الكاملة. يختلف إحساس الرائحة من شخص لآخر.",
+          "en": "Compare size, concentration and price. When a sample is available, try it before choosing a full bottle. Fragrance is experienced differently by each person."
+        }
+      ]
+    },
+    {
+      "id": "oud-ritual",
+      "name": {
+        "ar": "العطر والبخور: طقسان مختلفان",
+        "en": "Perfume and incense: two rituals"
+      },
+      "description": {
+        "ar": "اعرف طريقة الاستخدام المناسبة لكل نوع.",
+        "en": "Choose the right use for each type."
+      },
+      "image": "/images/oud.webp",
+      "published": true,
+      "paragraphs": [
+        {
+          "ar": "العطر والزيت لا يستخدمان مثل العود والبخور. راجع تعليمات العبوة والأداة المناسبة، ولا تستخدم عطر الجسم في المبخرة.",
+          "en": "Perfume and oils are used differently from oud and incense. Follow the product instructions and use the right equipment; do not put body perfume in a burner."
+        },
+        {
+          "ar": "استخدم البخور في مكان جيد التهوية وعلى سطح مقاوم للحرارة. أبعده عن الأطفال والحيوانات، ولا تترك مصدر الحرارة دون مراقبة.",
+          "en": "Use incense in a ventilated space on a heat-resistant surface. Keep it away from children and pets, and never leave heat unattended."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "ar": "كيف أختار الرائحة المناسبة لي؟",
+        "en": "How do I find a fragrance I like?"
+      },
+      "answer": {
+        "ar": "ابدأ بالنوتة التي تحبها، ثم اختر المناسبة والميزانية في مساعد اختيار العطر. يمكنك تجربة العينات المتاحة قبل الحجم الكامل.",
+        "en": "Start with a note you enjoy, then use our scent finder to choose an occasion and budget. Try an available sample before a full bottle."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل يمكن اختيار حجم مختلف؟",
+        "en": "Can I choose a different size?"
+      },
+      "answer": {
+        "ar": "نعم، تعرض صفحة كل منتج أحجامه المتاحة. يتغير السعر والتوفر مع اختيار الحجم، وتُحفظ اختياراتك في السلة.",
+        "en": "Yes. Each product page lists available sizes. Price and availability update with your selection, which stays with the cart line."
+      }
+    },
+    {
+      "question": {
+        "ar": "هل توجد خيارات للهدايا؟",
+        "en": "Are gift options available?"
+      },
+      "answer": {
+        "ar": "المنتجات المؤهلة تدعم التغليف ورسالة الإهداء. تظهر التكلفة الإضافية قبل الإضافة ويمكن تعديلها في السلة.",
+        "en": "Eligible products support wrapping and a gift message. The extra cost is shown before adding and can be edited in your bag."
+      }
+    },
+    {
+      "question": {
+        "ar": "كيف يُحسب الشحن والاسترجاع؟",
+        "en": "How do delivery and returns work?"
+      },
+      "answer": {
+        "ar": "راجع صفحة الشحن والاسترجاع وإجمالي الطلب قبل التأكيد. هذه نسخة عرض توضيحية؛ لا يتم شحن منتجات أو تحصيل أموال.",
+        "en": "Check Delivery & returns and your order total before confirming. This is an illustrative preview; no products are shipped and no money is collected."
+      }
+    }
+  ],
+  "trust": [
+    {
+      "title": {
+        "ar": "اختر على مهل",
+        "en": "Take your time"
+      },
+      "body": {
+        "ar": "أحجام ونوتات واضحة",
+        "en": "Clear sizes and fragrance notes"
+      },
+      "icon": "bottle"
+    },
+    {
+      "title": {
+        "ar": "هدية بتفاصيلك",
+        "en": "Make it personal"
+      },
+      "body": {
+        "ar": "تغليف ورسالة إهداء",
+        "en": "Wrapping and a personal note"
+      },
+      "icon": "gift"
+    },
+    {
+      "title": {
+        "ar": "جرّب قبل أن تختار",
+        "en": "Discover before you decide"
+      },
+      "body": {
+        "ar": "عينات ومجموعات اكتشاف",
+        "en": "Samples and discovery sets"
+      },
+      "icon": "spark"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "r1",
+      "productId": "amber-nights",
+      "name": {
+        "ar": "نورة",
+        "en": "Noura"
+      },
+      "quote": {
+        "ar": "أحببت الفكرة: أن أبدأ بالنفحة التي أحبها، وأصل إلى عطر يشبه ذوقي.",
+        "en": "I love the idea of starting with a favourite note and finding a fragrance that feels like me."
+      },
+      "score": 5,
+      "sample": true,
+      "verified": false
+    },
+    {
+      "id": "r2",
+      "productId": "house-gift",
+      "name": {
+        "ar": "خالد",
+        "en": "Khalid"
+      },
+      "quote": {
+        "ar": "تفاصيل الهدية هي ما يجعل الاختيار شخصيًا.",
+        "en": "It is the little details that make a gift personal."
+      },
+      "score": 5,
+      "sample": true,
+      "verified": false
+    }
+  ],
+  "socialProfiles": [],
+  "previewSocialProfiles": [
+    {
+      "id": "instagram",
+      "platform": "instagram",
+      "url": "",
+      "label": {
+        "ar": "إنستغرام",
+        "en": "Instagram"
+      },
+      "enabled": true
+    },
+    {
+      "id": "snapchat",
+      "platform": "snapchat",
+      "url": "",
+      "label": {
+        "ar": "سناب شات",
+        "en": "Snapchat"
+      },
+      "enabled": true
+    },
+    {
+      "id": "tiktok",
+      "platform": "tiktok",
+      "url": "",
+      "label": {
+        "ar": "تيك توك",
+        "en": "TikTok"
+      },
+      "enabled": true
+    },
+    {
+      "id": "x",
+      "platform": "x",
+      "url": "",
+      "label": {
+        "ar": "إكس",
+        "en": "X"
+      },
+      "enabled": true
+    },
+    {
+      "id": "facebook",
+      "platform": "facebook",
+      "url": "",
+      "label": {
+        "ar": "فيسبوك",
+        "en": "Facebook"
+      },
+      "enabled": true
+    }
+  ],
+  "sampleSocials": true,
+  "contact": {
+    "email": "",
+    "phone": "",
+    "whatsapp": "",
+    "address": {
+      "ar": "",
+      "en": ""
+    },
+    "hours": {
+      "ar": "",
+      "en": ""
+    },
+    "mapUrl": "",
+    "branches": []
+  },
+  "pages": {
+    "about": {
+      "title": {
+        "ar": "شذا، كما تحب أن تُذكر.",
+        "en": "Shadha. A way to be remembered."
+      },
+      "intro": {
+        "ar": "نقترب من العطر بتفاصيله الصغيرة: النفحة، الملمس، واللحظة.",
+        "en": "We approach fragrance through its smaller details: the note, the texture, the moment."
+      },
+      "sections": [
+        {
+          "title": {
+            "ar": "نفحة صغيرة، ومساحة للذاكرة.",
+            "en": "A small note. Room for a memory."
+          },
+          "body": {
+            "ar": "قد تبدأ الحكاية بخشب دافئ في مجلس، أو وردة في صباح هادئ. في عالم شذا نقترب من هذه التفاصيل: عطر للحضور، وزيت للمسة الأخيرة، وبخور لدفء المكان. اكتشف المجموعات على مهل، واتبع الرائحة التي تشبه ذوقك.",
+            "en": "A story may begin with warm wood in a gathering, or a rose on a quiet morning. In the world of Shadha, we look closer at those details: perfume for your presence, oil for a finishing touch, incense to warm a room. Explore slowly, and follow the fragrance that feels like you."
+          }
+        }
+      ],
+      "image": "/images/hero.webp"
+    },
+    "contact": {
+      "title": {
+        "ar": "حديثٌ يبدأ بنفحة.",
+        "en": "A conversation starts here."
+      },
+      "intro": {
+        "ar": "لديك سؤال عن رائحة أو حجم أو هدية؟ اترك لنا رسالتك.",
+        "en": "A question about a fragrance, a size, or a gift? Leave us a note."
+      },
+      "sections": [
+        {
+          "title": {
+            "ar": "تفاصيل واضحة، واختيار أسهل.",
+            "en": "Clear details. A simpler choice."
+          },
+          "body": {
+            "ar": "تُدار التفاصيل من إعدادات المتجر، وتظهر فقط الخدمات والمعلومات المتاحة فعلًا. هذه نسخة شذا التوضيحية لاختبار تجربة التسوق.",
+            "en": "Details are managed through store settings, and only available services and information are shown. This is the Shadha preview for exploring the shopping experience."
+          }
+        }
+      ],
+      "image": ""
+    },
+    "shipping": {
+      "title": {
+        "ar": "الشحن والاسترجاع",
+        "en": "Delivery & returns"
+      },
+      "intro": {
+        "ar": "سياسة توضيحية لنسخة العرض. يحدد التاجر شروطه الفعلية قبل النشر.",
+        "en": "Illustrative preview policy. The merchant supplies their actual terms before publication."
+      },
+      "sections": [
+        {
+          "title": {
+            "ar": "التوصيل في نسخة العرض",
+            "en": "Delivery in this preview"
+          },
+          "body": {
+            "ar": "الرسوم وحد الشحن المجاني موضحان أدناه ويظهران في ملخص الطلب. لا تنفذ نسخة العرض شحنًا فعليًا ولا تحدد موعد وصول. يزوّد المتجر العميل بمناطق التوصيل والمواعيد وسياسة الاسترجاع الفعلية قبل فتح البيع.",
+            "en": "The illustrative delivery charge and free-delivery threshold are shown below and in the order summary. This preview does not ship products or promise an arrival date. The merchant supplies actual delivery regions, timelines and return terms before opening sales."
+          }
+        }
+      ],
+      "image": ""
+    },
+    "privacy": {
+      "title": {
+        "ar": "سياسة الخصوصية",
+        "en": "Privacy"
+      },
+      "intro": {
+        "ar": "نسخة العرض تحفظ السلة والمفضلة في متصفحك. النماذج لا ترسل بيانات خارجية في وضع العرض.",
+        "en": "The preview stores your bag and saved items in this browser. Forms do not send data externally in preview mode."
+      },
+      "sections": [
+        {
+          "title": {
+            "ar": "ما يُحفظ في هذا المتصفح",
+            "en": "What stays in this browser"
+          },
+          "body": {
+            "ar": "تُحفظ الحقيبة والمفضلة والمنتجات التي شاهدتها وإيصالات الطلب التجريبي محليًا في المتصفح. لا يحفظ الإيصال عنوانك أو بيانات الاتصال. نماذج العرض لا ترسل رسائل إلى طرف خارجي. يمكنك إزالة البيانات بمسح بيانات الموقع في متصفحك.",
+            "en": "Your bag, saved items, recently viewed products and preview receipts are stored locally in this browser. Receipts do not store your address or contact details. Preview forms do not send messages to an external recipient. You can remove this data by clearing the site data in your browser."
+          }
+        }
+      ],
+      "image": ""
+    },
+    "terms": {
+      "title": {
+        "ar": "الشروط والأحكام",
+        "en": "Terms"
+      },
+      "intro": {
+        "ar": "المحتوى والأسعار والصور هنا أمثلة لتجربة الثيم؛ لا تمثل عرض بيع حقيقيًا.",
+        "en": "The content, prices and imagery are examples for this theme preview, not a real offer for sale."
+      },
+      "sections": [
+        {
+          "title": {
+            "ar": "تجربة الثيم",
+            "en": "Exploring the theme"
+          },
+          "body": {
+            "ar": "شذا هنا هوية توضيحية. المنتجات والأسعار والآراء والصور أمثلة لاستكشاف تجربة المتجر، وليست عرض بيع أو ادعاءات عن منتجات تجارية. لا تتطلب تجربة الطلب بيانات دفع، ولا تخصم أموالًا.",
+            "en": "Shadha is an illustrative identity in this preview. Products, prices, reviews and imagery demonstrate the storefront experience; they are not a sales offer or claims about merchant inventory. Preview checkout does not ask for payment details or charge money."
+          }
+        }
+      ],
+      "image": ""
+    }
+  },
+  "labels": {
+    "photoMissing": {
+      "ar": "الصورة غير متاحة حاليًا",
+      "en": "Image currently unavailable"
+    },
+    "stock": {
+      "ar": "التوفر",
+      "en": "Availability"
+    },
+    "viewMap": {
+      "ar": "افتح الخريطة",
+      "en": "Open map"
+    },
+    "serviceUnavailable": {
+      "ar": "هذه الخدمة غير متصلة بعد. استخدم بيانات التواصل المتاحة في هذه الصفحة.",
+      "en": "This service is not connected yet. Use the contact details available on this page."
+    },
+    "offers": {
+      "ar": "اختيارات بسعر خاص",
+      "en": "Special selections"
+    },
+    "compareNotice": {
+      "ar": "قارن حتى ثلاثة منتجات من النوع نفسه. اختيار نوع مختلف يبدأ مقارنة جديدة. السعر القياسي للحجم المحدد في كل بطاقة.",
+      "en": "Compare up to three products of the same type. Selecting another type starts a new comparison. Unit pricing refers to the size shown on each card."
+    },
+    "suggestions": {
+      "ar": "اختيارات قريبة من بحثك",
+      "en": "Suggestions for your search"
+    },
+    "receipt": {
+      "ar": "إيصال التجربة",
+      "en": "Preview receipt"
+    },
+    "receiptMissing": {
+      "ar": "هذا الإيصال غير محفوظ في هذا المتصفح.",
+      "en": "This receipt is not saved in this browser."
+    },
+    "print": {
+      "ar": "طباعة الإيصال",
+      "en": "Print receipt"
+    },
+    "matchReason": {
+      "ar": "يلائم اختياراتك:",
+      "en": "Matches your choices:"
+    },
+    "explore": {
+      "ar": "اكتشف",
+      "en": "Explore"
+    },
+    "added": {
+      "ar": "أُضيف إلى حقيبتك.",
+      "en": "Added to your bag."
+    },
+    "zoom": {
+      "ar": "تكبير صورة المنتج",
+      "en": "Enlarge product image"
+    },
+    "skip": {
+      "ar": "انتقل إلى المحتوى",
+      "en": "Skip to content"
+    },
+    "heroCaption": {
+      "ar": "عطور · عود · تفاصيل تُذكر",
+      "en": "PERFUME · OUD · THOUGHTFUL DETAILS"
+    },
+    "ritual": {
+      "ar": "طقوس المكان",
+      "en": "Rituals for the home"
+    },
+    "gifts": {
+      "ar": "هدايا تحمل شذا",
+      "en": "Gifts with a trace of Shadha"
+    },
+    "samples": {
+      "ar": "عينات ومجموعات الاكتشاف",
+      "en": "Samples & discovery sets"
+    },
+    "journal": {
+      "ar": "دفتر العطر",
+      "en": "The fragrance journal"
+    },
+    "sampleReview": {
+      "ar": "رأي توضيحي",
+      "en": "Illustrative review"
+    },
+    "verified": {
+      "ar": "شراء موثّق",
+      "en": "Verified purchase"
+    },
+    "sent": {
+      "ar": "وصلت رسالتك. شكرًا لتواصلك.",
+      "en": "Your message was received. Thank you."
+    },
+    "contactMessage": {
+      "ar": "رسالتك",
+      "en": "Your message"
+    },
+    "requiresJs": {
+      "ar": "تحتاج هذه الوظيفة إلى تفعيل JavaScript. يظل محتوى المتجر متاحًا للتصفح.",
+      "en": "This feature needs JavaScript. You can still browse the store content."
+    },
+    "loading": {
+      "ar": "جارٍ تحميل حقيبتك…",
+      "en": "Loading your bag…"
+    },
+    "orderDemoDone": {
+      "ar": "اكتملت تجربة الطلب.",
+      "en": "Your preview order is complete."
+    },
+    "orderDone": {
+      "ar": "استلمنا طلبك.",
+      "en": "We received your order."
+    },
+    "orderReceived": {
+      "ar": "سنرسل تفاصيل الطلب إلى بريدك.",
+      "en": "We will send the order details to your email."
+    },
+    "orderDemoNotice": {
+      "ar": "هذه تجربة محلية فقط. لا تُحصّل أموال ولا يُرسل طلب أو تُحجز منتجات.",
+      "en": "This is a local preview only. No payment is taken, no order is sent and no stock is reserved."
+    },
+    "emptyBag": {
+      "ar": "حقيبتك تنتظر أول نفحة.",
+      "en": "Your bag is waiting for its first fragrance."
+    },
+    "deliveryDetails": {
+      "ar": "تفاصيل التوصيل",
+      "en": "Delivery details"
+    },
+    "agree": {
+      "ar": "أوافق على",
+      "en": "I agree to the"
+    },
+    "terms": {
+      "ar": "الشروط والأحكام",
+      "en": "Terms"
+    },
+    "paymentHandoff": {
+      "ar": "يُعالج الطلب عبر خدمة المتجر المتصلة.",
+      "en": "The connected store service processes your order."
+    },
+    "orderSummary": {
+      "ar": "ملخص الطلب",
+      "en": "Order summary"
+    },
+    "coupon": {
+      "ar": "رمز الخصم",
+      "en": "Promotion code"
+    },
+    "discount": {
+      "ar": "الخصم",
+      "en": "Discount"
+    },
+    "invalidCoupon": {
+      "ar": "رمز الخصم غير صالح أو منتهي.",
+      "en": "This promotion code is invalid or expired."
+    },
+    "taxIncluded": {
+      "ar": "الأسعار تشمل الضريبة حسب إعدادات العرض.",
+      "en": "Prices include tax according to the preview settings."
+    },
+    "taxExcluded": {
+      "ar": "الأسعار لا تشمل الضريبة. يجب تأكيد الإجمالي قبل الدفع.",
+      "en": "Prices exclude tax. Confirm the final total before payment."
+    },
+    "editBag": {
+      "ar": "تعديل الحقيبة",
+      "en": "Edit bag"
+    },
+    "concentration": {
+      "ar": "التركيز",
+      "en": "Concentration"
+    },
+    "pagination": {
+      "ar": "صفحات المنتجات",
+      "en": "Product pages"
+    },
+    "perfume": {
+      "ar": "عطر",
+      "en": "Perfume"
+    },
+    "oil": {
+      "ar": "زيت عطري",
+      "en": "Perfume oil"
+    },
+    "oud": {
+      "ar": "عود",
+      "en": "Oud"
+    },
+    "bakhoor": {
+      "ar": "بخور",
+      "en": "Bakhoor"
+    },
+    "maamoul": {
+      "ar": "معمول بخور",
+      "en": "Incense tablets"
+    },
+    "home-spray": {
+      "ar": "معطر منزل",
+      "en": "Home spray"
+    },
+    "diffuser": {
+      "ar": "فواحة أعواد",
+      "en": "Reed diffuser"
+    },
+    "burner": {
+      "ar": "مبخرة",
+      "en": "Incense burner"
+    },
+    "gift-set": {
+      "ar": "مجموعة هدية",
+      "en": "Gift set"
+    },
+    "discovery-set": {
+      "ar": "مجموعة اكتشاف",
+      "en": "Discovery set"
+    },
+    "audience": {
+      "ar": "مناسب لـ",
+      "en": "For"
+    },
+    "women": {
+      "ar": "النساء",
+      "en": "Women"
+    },
+    "men": {
+      "ar": "الرجال",
+      "en": "Men"
+    },
+    "unisex": {
+      "ar": "الجميع",
+      "en": "Everyone"
+    },
+    "oilType": {
+      "ar": "نوع الزيت",
+      "en": "Oil type"
+    },
+    "perfume-oil": {
+      "ar": "زيت عطري",
+      "en": "Perfume oil"
+    },
+    "dehn-oud": {
+      "ar": "دهن عود",
+      "en": "Oud oil"
+    },
+    "musk": {
+      "ar": "مسك",
+      "en": "Musk"
+    },
+    "origin": {
+      "ar": "المنشأ",
+      "en": "Origin"
+    },
+    "grade": {
+      "ar": "الدرجة",
+      "en": "Grade"
+    },
+    "applicator": {
+      "ar": "أداة التطبيق",
+      "en": "Applicator"
+    },
+    "heatingMethod": {
+      "ar": "طريقة التسخين",
+      "en": "Heating method"
+    },
+    "blend": {
+      "ar": "الخلطة",
+      "en": "Blend"
+    },
+    "baseMaterial": {
+      "ar": "مادة الأساس",
+      "en": "Base material"
+    },
+    "suitableSurfaces": {
+      "ar": "الاستخدام المناسب",
+      "en": "Suitable use"
+    },
+    "reeds": {
+      "ar": "عدد الأعواد",
+      "en": "Number of reeds"
+    },
+    "material": {
+      "ar": "الخامة",
+      "en": "Material"
+    },
+    "heatSource": {
+      "ar": "مصدر الحرارة",
+      "en": "Heat source"
+    },
+    "charcoal": {
+      "ar": "فحم",
+      "en": "Charcoal"
+    },
+    "electric": {
+      "ar": "كهربائي",
+      "en": "Electric"
+    },
+    "voltage": {
+      "ar": "الجهد الكهربائي",
+      "en": "Voltage"
+    },
+    "power": {
+      "ar": "القدرة بالواط",
+      "en": "Power in watts"
+    },
+    "packaging": {
+      "ar": "التغليف",
+      "en": "Packaging"
+    },
+    "performance": {
+      "ar": "ملاحظة الاستخدام",
+      "en": "Performance note"
+    },
+    "pieces": {
+      "ar": "قطع",
+      "en": "pieces"
+    },
+    "families": {
+      "ar": "العائلات العطرية",
+      "en": "Fragrance families"
+    },
+    "occasions": {
+      "ar": "لكل مناسبة، شذا",
+      "en": "A fragrance for every occasion"
+    },
+    "brands": {
+      "ar": "الدور العطرية",
+      "en": "Fragrance houses"
+    },
+    "guides": {
+      "ar": "دفتر العطر",
+      "en": "Fragrance journal"
+    },
+    "faq": {
+      "ar": "أسئلة وإجابات",
+      "en": "Questions & answers"
+    },
+    "contactSideTitle": {
+      "ar": "نساعدك في التفاصيل.",
+      "en": "We can help with the details."
+    },
+    "contactSideBody": {
+      "ar": "ابدأ بنفحة تحبّها أو لحظة تريد أن تتذكرها. يمكنك أيضًا استكشاف دليل الاختيار قبل كتابة رسالتك.",
+      "en": "Start with a note you love or a moment you want to remember. You can explore the scent finder before writing your message."
+    },
+    "aboutNotesTitle": {
+      "ar": "ذوقك هو بداية الحكاية.",
+      "en": "Your taste is where the story begins."
+    },
+    "freeAbove": {
+      "ar": "شحن مجاني للطلبات من",
+      "en": "Free delivery for orders from"
+    },
+    "search": {
+      "ar": "ابحث عن عطر، نفحة، أو مجموعة",
+      "en": "Search a fragrance, note, or collection"
+    },
+    "searchAction": {
+      "ar": "بحث",
+      "en": "Search"
+    },
+    "bag": {
+      "ar": "حقيبة التسوق",
+      "en": "Shopping bag"
+    },
+    "saved": {
+      "ar": "المفضلة",
+      "en": "Saved"
+    },
+    "menu": {
+      "ar": "القائمة",
+      "en": "Menu"
+    },
+    "close": {
+      "ar": "إغلاق",
+      "en": "Close"
+    },
+    "all": {
+      "ar": "عرض الكل",
+      "en": "View all"
+    },
+    "add": {
+      "ar": "أضف للحقيبة",
+      "en": "Add to bag"
+    },
+    "choose": {
+      "ar": "اختر الحجم",
+      "en": "Choose options"
+    },
+    "details": {
+      "ar": "تفاصيل المنتج",
+      "en": "Product details"
+    },
+    "quick": {
+      "ar": "معاينة سريعة",
+      "en": "Quick view"
+    },
+    "available": {
+      "ar": "متوفر",
+      "en": "Available"
+    },
+    "unavailable": {
+      "ar": "غير متوفر",
+      "en": "Unavailable"
+    },
+    "notes": {
+      "ar": "النوتات العطرية",
+      "en": "Fragrance notes"
+    },
+    "family": {
+      "ar": "العائلة العطرية",
+      "en": "Fragrance family"
+    },
+    "occasion": {
+      "ar": "المناسبة",
+      "en": "Occasion"
+    },
+    "type": {
+      "ar": "نوع المنتج",
+      "en": "Product type"
+    },
+    "price": {
+      "ar": "السعر",
+      "en": "Price"
+    },
+    "size": {
+      "ar": "الحجم / الوزن",
+      "en": "Size / weight"
+    },
+    "quantity": {
+      "ar": "الكمية",
+      "en": "Quantity"
+    },
+    "filter": {
+      "ar": "تصفية",
+      "en": "Filter"
+    },
+    "sort": {
+      "ar": "ترتيب حسب",
+      "en": "Sort by"
+    },
+    "clear": {
+      "ar": "مسح الكل",
+      "en": "Clear all"
+    },
+    "results": {
+      "ar": "نتيجة",
+      "en": "results"
+    },
+    "empty": {
+      "ar": "لم نجد ما يطابق اختياراتك. جرّب إزالة أحد الفلاتر.",
+      "en": "No matches for these choices. Try removing a filter."
+    },
+    "home": {
+      "ar": "الرئيسية",
+      "en": "Home"
+    },
+    "catalog": {
+      "ar": "كل ما يحمل شذا",
+      "en": "Everything Shadha"
+    },
+    "catalogIntro": {
+      "ar": "اختر النفحة والحجم، واترك الباقي لذوقك.",
+      "en": "Choose your note and size. Let your taste do the rest."
+    },
+    "sample": {
+      "ar": "نسخة عرض توضيحية",
+      "en": "Illustrative theme preview"
+    },
+    "photoNote": {
+      "ar": "تصوير توضيحي لتصميم المجموعة؛ راجع حجم العبوة والمحتويات المحددة.",
+      "en": "Illustrative collection packaging; refer to the selected size and listed contents."
+    },
+    "wrap": {
+      "ar": "تغليف هدية",
+      "en": "Gift wrapping"
+    },
+    "message": {
+      "ar": "رسالة الإهداء",
+      "en": "Gift message"
+    },
+    "subtotal": {
+      "ar": "مجموع المنتجات",
+      "en": "Subtotal"
+    },
+    "shipping": {
+      "ar": "الشحن",
+      "en": "Delivery"
+    },
+    "total": {
+      "ar": "الإجمالي",
+      "en": "Total"
+    },
+    "checkout": {
+      "ar": "إتمام الطلب",
+      "en": "Checkout"
+    },
+    "remove": {
+      "ar": "إزالة",
+      "en": "Remove"
+    },
+    "continue": {
+      "ar": "تابع الاكتشاف",
+      "en": "Continue exploring"
+    },
+    "email": {
+      "ar": "البريد الإلكتروني",
+      "en": "Email address"
+    },
+    "name": {
+      "ar": "الاسم",
+      "en": "Name"
+    },
+    "phone": {
+      "ar": "رقم الهاتف",
+      "en": "Phone number"
+    },
+    "city": {
+      "ar": "المدينة",
+      "en": "City"
+    },
+    "district": {
+      "ar": "الحي",
+      "en": "District"
+    },
+    "address": {
+      "ar": "العنوان التفصيلي",
+      "en": "Street address"
+    },
+    "send": {
+      "ar": "أرسل رسالتك",
+      "en": "Send your message"
+    },
+    "subscribe": {
+      "ar": "اشترك",
+      "en": "Subscribe"
+    },
+    "pending": {
+      "ar": "جارٍ الإرسال…",
+      "en": "Sending…"
+    },
+    "demoSuccess": {
+      "ar": "تم تسجيل التجربة محليًا. لم تُرسل رسالة خارجية.",
+      "en": "Preview recorded locally. No external message was sent."
+    },
+    "serviceError": {
+      "ar": "الخدمة غير متاحة الآن. احتفظنا بمدخلاتك لتعيد المحاولة.",
+      "en": "The service is unavailable. Your entries are kept so you can retry."
+    },
+    "sampleAction": {
+      "ar": "جرّب العينة",
+      "en": "Try a sample"
+    },
+    "compare": {
+      "ar": "قارن",
+      "en": "Compare"
+    },
+    "recent": {
+      "ar": "شاهدت مؤخرًا",
+      "en": "Recently viewed"
+    },
+    "save": {
+      "ar": "حفظ",
+      "en": "Save"
+    },
+    "unsave": {
+      "ar": "إلغاء الحفظ",
+      "en": "Unsave"
+    },
+    "unit": {
+      "ar": "السعر القياسي",
+      "en": "Unit price"
+    },
+    "guide": {
+      "ar": "دليل الحجم",
+      "en": "Size guide"
+    },
+    "care": {
+      "ar": "الاستخدام والعناية",
+      "en": "Use & care"
+    },
+    "similar": {
+      "ar": "نفحات قد تحبّها",
+      "en": "Notes you may also love"
+    },
+    "complements": {
+      "ar": "يكمل الحكاية",
+      "en": "Complete the ritual"
+    },
+    "backTop": {
+      "ar": "العودة للأعلى",
+      "en": "Back to top"
+    },
+    "sampleSocial": {
+      "ar": "أمثلة توضيحية غير مرتبطة بحسابات",
+      "en": "Unlinked sample profiles"
+    },
+    "newest": {
+      "ar": "الأحدث",
+      "en": "Newest"
+    },
+    "priceAsc": {
+      "ar": "السعر: الأقل أولًا",
+      "en": "Price: low to high"
+    },
+    "priceDesc": {
+      "ar": "السعر: الأعلى أولًا",
+      "en": "Price: high to low"
+    },
+    "inStock": {
+      "ar": "المتوفر فقط",
+      "en": "In stock only"
+    },
+    "min": {
+      "ar": "من",
+      "en": "From"
+    },
+    "max": {
+      "ar": "إلى",
+      "en": "To"
+    },
+    "finder": {
+      "ar": "لنجد عطرك",
+      "en": "Let’s find your fragrance"
+    },
+    "finderIntro": {
+      "ar": "نفحة تحبها، مناسبة، وميزانية. اختيارات أقرب إليك.",
+      "en": "A favourite note, an occasion, a budget. Choices closer to you."
+    },
+    "find": {
+      "ar": "اعرض اختياراتي",
+      "en": "Find my fragrances"
+    },
+    "newsletterNotice": {
+      "ar": "تجربة اشتراك توضيحية، دون إرسال بريد فعلي.",
+      "en": "Preview subscription; no emails will be sent."
+    },
+    "rights": {
+      "ar": "شذا. كل الحقوق محفوظة.",
+      "en": "Shadha. All rights reserved."
+    },
+    "notFound": {
+      "ar": "هذه الصفحة لا تحمل شذا بعد.",
+      "en": "This page is not here yet."
+    },
+    "notFoundBody": {
+      "ar": "قد يكون الرابط تغيّر. اكتشف المجموعات المتاحة.",
+      "en": "The link may have changed. Explore the available collections."
+    },
+    "orderDemo": {
+      "ar": "تأكيد طلب تجريبي",
+      "en": "Confirm preview order"
+    },
+    "quoteChanged": {
+      "ar": "تغير السعر أو التوفر. راجع السلة قبل المحاولة مرة أخرى.",
+      "en": "Price or availability changed. Review your bag and try again."
+    },
+    "deliveryPending": {
+      "ar": "تُحدد قبل تأكيد الطلب",
+      "en": "Confirmed before ordering"
+    },
+    "noSaved": {
+      "ar": "ابدأ بحفظ ما يلفت انتباهك.",
+      "en": "Save the things that catch your eye."
+    },
+    "stockWarning": {
+      "ar": "الكمية المطلوبة غير متاحة.",
+      "en": "The requested quantity is unavailable."
+    },
+    "topNotes": {
+      "ar": "البداية",
+      "en": "The opening"
+    },
+    "heartNotes": {
+      "ar": "القلب",
+      "en": "The heart"
+    },
+    "baseNotes": {
+      "ar": "الأثر",
+      "en": "The lasting note"
+    },
+    "contents": {
+      "ar": "داخل المجموعة",
+      "en": "Inside the set"
+    },
+    "brand": {
+      "ar": "الدار",
+      "en": "House"
+    },
+    "intensity": {
+      "ar": "الطابع",
+      "en": "Character"
+    },
+    "soft": {
+      "ar": "ناعم",
+      "en": "Soft"
+    },
+    "balanced": {
+      "ar": "متوازن",
+      "en": "Balanced"
+    },
+    "rich": {
+      "ar": "عميق",
+      "en": "Rich"
+    }
+  },
+  "commerce": {
+    "deliveryFee": 25,
+    "freeDeliveryAbove": 400,
+    "taxIncluded": true,
+    "giftWrapPrice": 20,
+    "giftMessageMax": 180,
+    "maxSamples": 4,
+    "coupon": {
+      "code": "DISCOVER",
+      "percent": 10,
+      "endsAt": "2027-01-01T00:00:00Z"
+    }
+  },
+  "services": {
+    "checkout": false,
+    "contact": false,
+    "newsletter": false
+  },
+  "redirects": {
+    "/products/rose-damascena": "/notes/rose",
+    "/products/citrus-breeze": "/notes/bergamot",
+    "/products/white-musk": "/notes/musk",
+    "/products/saffron-luxe": "/notes/saffron",
+    "/products/midnight-oud": "/perfumes/oud",
+    "/products/royal-amber": "/notes/amber",
+    "/products/jasmine-nights": "/families/floral",
+    "/products/lemon-verbena": "/families/fresh",
+    "/products/vanilla-dusk": "/notes/vanilla",
+    "/products/cambodian-oud": "/perfumes/oud",
+    "/products/pink-peony": "/families/floral",
+    "/products/aqua-marine": "/families/fresh",
+    "/products/musk-tahara": "/notes/musk",
+    "/products/cedar-wood": "/notes/cedar",
+    "/products/orange-blossom": "/families/floral",
+    "/products/silk-musk": "/notes/musk",
+    "/products/imperial-saffron": "/notes/saffron",
+    "/products/fresh-bergamot": "/notes/bergamot",
+    "/": "/ar",
+    "/products": "/ar/products",
+    "/about": "/ar/about",
+    "/contact": "/ar/contact",
+    "/cart": "/ar/cart",
+    "/checkout": "/ar/checkout"
+  }
+}

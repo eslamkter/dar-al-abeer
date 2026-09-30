@@ -1,10 +1,38 @@
-import {helpContent} from "@/config/help";
-import { discoveryPath, discoveryValues } from "@/lib/discovery";
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/seo";
-import { getProducts } from "@/lib/products";
+import { getStore } from "@/lib/runtime";
+import { enabledProduct, href } from "@/lib/catalog";
+export const dynamic = "force-dynamic";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const products = await getProducts();
-  const routes = [...helpContent.topics.filter(t=>!t.draft).map(t=>`/help/${t.slug}`),"/notes","/occasions","/perfumes","/help", "/help/shopping","/", "/products", "/about", "/contact", "/scent-finder", ...products.flatMap(p => (["perfumes", "notes", "occasions"] as const).flatMap(kind => discoveryValues(p,kind).map(value => discoveryPath(kind,value)))), ...products.map(p => `/products/${p.slug}`)];
-  return [...new Set(routes)].map(route => ({ url: new URL(route, siteUrl).href }));
+  const s = await getStore();
+  if (s.preview || !s.indexable) return [];
+  const routes = [
+    "/",
+    "/products",
+    "/faq",
+    ...Object.keys(s.pages).map((p) => "/" + p),
+    ...s.categories.filter((p) => p.published).map((p) => "/" + p.id),
+    ...s.products
+      .filter((p) => enabledProduct(s, p))
+      .map((p) => "/products/" + p.slug),
+    ...(["notes", "families", "occasions", "guides"] as const).flatMap((k) => [
+      "/" + k,
+      ...s[k].filter((p) => p.published).map((p) => `/${k}/${p.id}`),
+    ]),
+    ...(s.features.multiBrand
+      ? s.brands.filter((b) => b.published).map((b) => `/brands/${b.id}`)
+      : []),
+    ...(s.features.gifts ? ["/gifts"] : []),
+    ...(s.features.samples ? ["/discovery-sets"] : []),
+  ];
+  return routes.flatMap((path) =>
+    (["ar", "en"] as const).map((l) => ({
+      url: s.origin + href(l, path),
+      alternates: {
+        languages: {
+          ar: s.origin + href("ar", path),
+          en: s.origin + href("en", path),
+        },
+      },
+    })),
+  );
 }

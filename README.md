@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shadha perfume & incense storefront
 
-## Getting Started
+Original bilingual theme rebuild, approved 2026-09-30. Next.js 16 / React 19, TypeScript and Zod. This is a customer-hosted storefront preview; no dashboard, payment service or production merchant database is claimed.
 
-First, run the development server:
+## Run
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```powershell
+npm ci
+npm run dev -- --port 3020
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `/ar` or `/en`. Production: `npm run build` then `npm run start -- --port 3020`. `npm test` runs commerce/data invariants; `npm run lint -- src` checks the application. `npm run images` updates optimized WebP assets and also runs automatically before builds.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Runtime settings
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+See [the integration contract](docs/RUNTIME-CONTRACT.md). To edit the preview without a rebuild:
 
-## Learn More
+```powershell
+npx tsx scripts/export-preview.ts preview-settings.json
+$env:SHADHA_STORE_FILE=(Resolve-Path preview-settings.json).Path
+npm run start -- --port 3020
+```
 
-To learn more about Next.js, take a look at the following resources:
+A configured source failure is an error, never a fallback to demo inventory. Live mode requires explicit merchant settings and rejects illustrative assets/reviews. Never put service credentials in public environment variables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/data`: complete bilingual preview document and editorial copy.
+- `src/lib/schema.ts`: ten discriminated product types and runtime store validation.
+- `src/lib/catalog.ts`: matching-SKU search, availability, scheduled prices and cart quotation.
+- `src/lib/runtime.ts`: per-request file/HTTPS settings adapter.
+- `src/components`: original storefront composition and focused client interactions.
+- `src/app`: localized routing, metadata, APIs, robots and sitemap.
+- `assets/source` / `public/images`: original generated artwork and optimized output. See [ASSETS.md](ASSETS.md).
+- `tests/catalog.test.ts`: variant boundaries, stock aggregation, sets, coupons, publication and URL contracts.
 
-## Deploy on Vercel
+Repeatable Playwright scripts live in the workspace's `tools/structure-audit`: `perfume-rebuild.mjs`, `perfume-flows.mjs`, `perfume-runtime.mjs`, `perfume-pairwise.mjs`. Evidence is in `analysis/perfume-rebuild-2026-09-30/qa`. The runtime script intentionally edits its isolated fixture and restores it afterward; do not run it against a merchant's settings.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The original theme remains at `themes/dar-al-abeer`, unchanged. This checkout is `worktrees/perfume-rebuild`, branch `rebuild/shadha-20260930`. Earlier source, artwork manifest and demo assets were preserved under the workspace analysis archive. Retired fictional URLs have an explicit discovery-page redirect map.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The preview uses made-up inventory and clearly labelled illustrative media/reviews. Merchant-accurate photography, policies, stock, domain, contact details and connected services are required before live delivery.

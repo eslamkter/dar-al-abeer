@@ -1,3 +1,0 @@
-"use client";
-import {useState} from "react";import {shareUi as ui} from "@/config/share";
-export function ShareProduct({title}:{title:string}){const [message,setMessage]=useState("");async function share(){const url=location.href;try{if(navigator.share){await navigator.share({title,url});return;}await navigator.clipboard.writeText(url);setMessage(ui.copied);}catch(error){if(error instanceof DOMException&&error.name==="AbortError")return;setMessage(`${ui.copy}: ${url}`);}}return <div className="mt-4"><button type="button" className="min-h-11 rounded-full border border-border px-5 py-2 text-sm" onClick={share}>{ui.share}</button><p role="status" className="mt-2 break-all text-sm text-muted">{message}</p></div>;}
